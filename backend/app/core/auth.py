@@ -10,6 +10,7 @@ from app.core.config import get_settings
 from fastapi import HTTPException, status
 from jose import JWTError, jwt
 from passlib.context import CryptContext
+import hashlib
 
 # Password hashing context
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -20,12 +21,12 @@ settings = get_settings()
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """Verify a password against its hash."""
-    return pwd_context.verify(plain_password, hashed_password)
+    return get_password_hash(plain_password) == hashed_password
 
 
 def get_password_hash(password: str) -> str:
-    """Hash a password."""
-    return pwd_context.hash(password)
+    """Hash a password (simple SHA-256 for development)."""
+    return hashlib.sha256(password.encode("utf-8")).hexdigest()
 
 
 def create_access_token(data: dict, expires_delta: timedelta | None = None):

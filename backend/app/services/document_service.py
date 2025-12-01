@@ -16,8 +16,9 @@ from typing import Any, Dict, List, Optional, Union
 import pdfplumber
 import pypdf
 from app.core.config import Settings
-from app.models.document import Document, DocumentMetadata
-from app.repositories.document_repository import DocumentRepository
+from app.models.document import Document, DocumentMetadata, DocumentChunk
+from app.repositories.document_repository import DocumentRepository, DocumentChunkRepository
+from app.services.vector_store import VectorStore
 
 logger = logging.getLogger(__name__)
 
@@ -29,6 +30,8 @@ class DocumentService:
         self.settings = settings
         self.upload_dir = settings.UPLOAD_DIR
         self.document_repo = DocumentRepository()
+        self.chunk_repo = DocumentChunkRepository()
+        self.vector_store = VectorStore()
 
         # Ensure upload directory exists
         os.makedirs(self.upload_dir, exist_ok=True)
@@ -70,6 +73,29 @@ class DocumentService:
                 word_count=len(extracted_text.split()) if extracted_text else 0,
             )
 
+            # NEW: Text Blocking
+            chunks = await self._chunk_text(extracted_text)
+
+            # NEW: Generate embeddings for each block
+            embeddings = await self._generate_embeddings(chunks)
+
+            # NEW: Metadata used by the vector library (dict, not Pydantic objects)
+            vector_metadata: dict[str, Any] = {
+                "pages": metadata.pages,
+                "author": metadata.author,
+                "word_count": metadata.word_count,
+                "language": language,
+                "filename": filename,
+            }
+
+            # NEW: Write chunks and vectors to the vector library and chunk repository
+            await self._store_in_vector_db(
+                doc_id=doc_id,
+                chunks=chunks,
+                embeddings=embeddings,
+                metadata=vector_metadata,
+            )
+
             # Create document model
             document = Document(
                 id=doc_id,
@@ -85,9 +111,9 @@ class DocumentService:
                 status="processed",
                 language=language,
                 content=extracted_text,
-                chunks=[],  # Will be populated by chunking process
+                chunks=chunks,  # Originally it was [], now it saves a list of text blocks
                 metadata=metadata,
-                vector_id=None,  # Will be set when vectors are created
+                vector_id=self.vector_store.collection.name,  # Originally it was None, now record the collection name used 
             )
 
             # Save through repository
@@ -313,10 +339,72 @@ class DocumentService:
         """Store document chunks and embeddings in vector database."""
 
         try:
-            # Vector database storage would be implemented here
-            # This would use ChromaDB, Pinecone, or similar
+            if not chunks or not embeddings:
+                logger.warning("No chunks or embeddings to store for document %s", doc_id)
+                return False
 
-            # For now, simulate successful storage
+            if len(chunks) != len(embeddings):
+                raise ValueError(
+                    f"Chunks and embeddings length mismatch: "
+                    f"{len(chunks)} vs {len(embeddings)}"
+                )
+
+            # Preparing per-chunk metadata for the vector library
+            pages = metadata.get("pages")
+            author = metadata.get("author")
+            word_count = metadata.get("word_count")
+            language = metadata.get("language")
+            filename = metadata.get("filename")
+
+            metadatas: list[dict[str, Any]] = []
+            for i, chunk in enumerate(chunks):
+                meta: dict[str, Any] = {
+                        "doc_id": doc_id,
+                        "chunk_index": i,
+                        "page_number": 1,  # placeholder
+                    }
+                if pages is not None:
+                    meta["pages"] = int(pages)
+                if author is not None:
+                    meta["author"] = str(author)
+                if word_count is not None:
+                    meta["word_count"] = int(word_count)
+                if language is not None:
+                    meta["language"] = str(language)
+                if filename is not None:
+                    meta["filename"] = str(filename)
+
+                metadatas.append(meta)
+
+            # Write to the Chroma vector library
+            chunk_ids = self.vector_store.add_documents(
+                doc_id=doc_id,
+                chunks=chunks,
+                embeddings=embeddings,
+                metadatas=metadatas,
+            )
+
+             # Write to local chunks persistent repository（Monk JSON）
+            now = datetime.now(timezone.utc)
+            for i, (chunk_id, chunk_text, emb) in enumerate(
+                zip(chunk_ids, chunks, embeddings)
+            ):
+                chunk_model = DocumentChunk(
+                    id=chunk_id,
+                    doc_id=doc_id,
+                    chunk_index=i,
+                    page_number=1,
+                    content=chunk_text,
+                    embedding=emb,
+                    metadata=DocumentMetadata(
+                        pages=pages,
+                        author=author,
+                        word_count=word_count,
+                    ),
+                    created_at=now,
+                )
+                self.chunk_repo.create(chunk_model)
+
             return True
 
         except Exception as e:
@@ -335,59 +423,57 @@ class DocumentService:
 
             query_vector = query_embedding[0]
 
-            # 2. Get all documents from repository
-            documents = self.document_repo.find_all()
-            if not documents:
+            # 2. Use VectorStore to perform similarity search on stored chunks
+            raw_results = self.vector_store.search(
+                query_embedding=query_vector,
+                top_k=limit,
+                doc_id=None,
+                where=None,
+            )
+            logger.info(f"VectorStore returned {len(raw_results)} items")
+
+            if not raw_results:
                 return []
 
-            results = []
+            results: list[dict[str, Any]] = []
 
-            # 3. For each document, simulate chunk search with similarity calculation
-            for doc in documents:
+            # 3. Format results and enrich with document info
+            for item in raw_results:
                 try:
-                    # Simulate document chunks (in production, these would be stored in vector DB)
-                    sample_chunks = [
-                        f"Content from {doc.filename} discussing economic trends "
-                        f"and market analysis.",
-                        f"Key findings from {doc.title} related to business "
-                        f"development and growth.",
-                        f"Statistical data and insights from {doc.filename} "
-                        f"covering regional performance.",
-                    ]
+                    # Similarity score from vector store
+                    similarity = float(item.get("similarity_score", 0.0))
+                    if similarity < similarity_threshold:
+                        continue
 
-                    for i, chunk in enumerate(sample_chunks):
-                        # Generate embedding for this chunk
-                        chunk_embeddings = await self._generate_embeddings([chunk])
-                        if not chunk_embeddings:
-                            continue
+                    # Chunk text
+                    chunk_text = item.get("text") or ""
+                    metadata = item.get("metadata") or {}
 
-                        chunk_vector = chunk_embeddings[0]
+                    doc_id = metadata.get("doc_id")
+                    page_number = metadata.get("page_number") or 1
 
-                        # Calculate cosine similarity
-                        similarity = self._calculate_cosine_similarity(
-                            query_vector, chunk_vector
-                        )
+                    # Look up document record from repository
+                    document = self.document_repo.find_by_id(doc_id) if doc_id else None
 
-                        if similarity >= similarity_threshold:
-                            results.append({
-                                "doc_id": doc.id,
-                                "filename": doc.filename,
-                                "title": doc.title,
-                                "chunk_text": chunk,
-                                "page_number": i + 1,  # Simulated page number
-                                "similarity_score": round(similarity, 3),
-                                "metadata": {
-                                    "section": f"Section {i + 1}",
-                                    "upload_date": doc.upload_date.isoformat(),
-                                    "language": doc.language,
-                                },
-                            })
+                    results.append(
+                        {
+                            "doc_id": doc_id,
+                            "filename": (
+                                document.filename if document else metadata.get("filename")
+                            ),
+                            "title": document.title if document else None,
+                            "chunk_text": chunk_text,
+                            "page_number": page_number,
+                            "similarity_score": round(similarity, 3),
+                            "metadata": metadata,
+                        }
+                    )
 
-                except Exception as e:
-                    logger.warning(f"Error processing document {doc.id}: {e}")
+                except Exception as inner_e:
+                    logger.warning(f"Error building search result from vector item: {inner_e}")
                     continue
 
-            # Sort by similarity score (descending) and return top results
+            # 4. Sort by similarity score and return top N
             results.sort(key=lambda x: x["similarity_score"], reverse=True)
             return results[:limit]
 
@@ -428,7 +514,7 @@ class DocumentService:
         """Get content from a specific document using repository."""
 
         try:
-            document = self.document_repo.get_by_id(doc_id)
+            document = self.document_repo.find_by_id(doc_id)
             if not document:
                 raise ValueError(f"Document with ID {doc_id} not found")
 
@@ -544,7 +630,7 @@ class DocumentService:
         """Update document processing status."""
 
         try:
-            document = self.document_repo.get_by_id(doc_id)
+            document = self.document_repo.find_by_id(doc_id)
             if not document:
                 return False
 
@@ -562,7 +648,7 @@ class DocumentService:
 
         try:
             # Get document info
-            document = self.document_repo.get_by_id(doc_id)
+            document = self.document_repo.find_by_id(doc_id)
             if not document:
                 raise ValueError(f"Document with ID {doc_id} not found")
 

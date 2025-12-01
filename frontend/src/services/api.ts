@@ -1,5 +1,6 @@
 // Real API Service Layer - Production Implementation
 import { Message, Report, StatData, Translations, UploadedFile } from '../mock/types';
+import { authService } from './authService';
 
 // Base API configuration
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000/api/v1';
@@ -50,6 +51,18 @@ class ApiClient {
       headers: this.headers,
       ...options,
     };
+    
+    // Retrieve login token from authService or localStorage
+    const token =
+      authService.getToken() || localStorage.getItem('auth_token');
+
+    // Add Authorization to the request header.
+    if (token) {
+      const existingHeaders =
+        (config.headers as Record<string, string> | undefined) || {};
+      existingHeaders['Authorization'] = `Bearer ${token}`;
+      config.headers = existingHeaders;
+    }
 
     try {
       const response = await fetch(url, config);
@@ -108,7 +121,7 @@ export const realApi = {
 
   // Chat API
   sendMessage: async (message: string, conversationId?: string): Promise<Message> => {
-    const response = await apiClient.post<any>('/chat/demo/message', { 
+    const response = await apiClient.post<any>('/chat/message', { 
       message,
       language: 'en',
       context: conversationId 

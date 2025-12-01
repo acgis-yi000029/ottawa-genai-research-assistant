@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 
 from app.api.auth import get_current_user
 from app.core.config import get_settings
-from app.models.chat import Conversation, Message
+from app.models.chat import Conversation, Message, ChatResponse
 from app.models.user import User
 from app.repositories.chat_repository import (ConversationRepository,
                                               MessageRepository)
@@ -27,14 +27,6 @@ class ChatMessage(BaseModel):
     language: str | None = "en"
     context: str | None = None
 
-
-class ChatResponse(BaseModel):
-    id: str
-    response: str
-    language: str
-    timestamp: datetime
-    sources: list[str] | None = None
-    charts: dict | None = None
 
 
 class ChatHistory(BaseModel):

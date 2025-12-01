@@ -44,6 +44,20 @@ class UploadResponse(BaseModel):
     processing_status: str
     status: str = "uploaded"  # 添加status字段用于测试兼容性
 
+class DocumentSearchRequest(BaseModel):
+    query: str
+    limit: int = 5
+    similarity_threshold: float = 0.7
+
+class DocumentSearchResult(BaseModel):
+    doc_id: str | None = None
+    filename: str | None = None
+    title: str | None = None
+    chunk_text: str
+    page_number: int
+    similarity_score: float
+    metadata: dict | None = None
+
 
 @router.post("/upload", response_model=UploadResponse)
 async def upload_document(
@@ -291,4 +305,34 @@ async def get_document_content(
     except Exception as e:
         raise HTTPException(
             status_code=500, detail=f"Error retrieving document content: {str(e)}"
+        )
+
+@router.post("/search", response_model=list[DocumentSearchResult])
+async def search_documents_endpoint(
+    request: DocumentSearchRequest,
+    current_user: User = Depends(get_current_user),
+    settings=Depends(get_settings),
+):
+    """
+    Search processed documents using semantic search on stored chunks.
+
+    - **query**: Search text
+    - **limit**: Maximum number of results
+    - **similarity_threshold**: Minimum similarity score (0–1) to include in results
+    """
+    try:
+        doc_service = DocumentService(settings)
+
+        results = await doc_service.search_documents(
+            query=request.query,
+            limit=request.limit,
+            similarity_threshold=request.similarity_threshold,
+        )
+
+        return results
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error searching documents: {str(e)}",
         )

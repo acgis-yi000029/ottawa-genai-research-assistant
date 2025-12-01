@@ -59,13 +59,12 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     """Chat response model."""
 
-    message: str
-    conversation_id: str
-    message_id: str
-    sources: list[str] | None = None
-    confidence: float | None = None
+    id: str
+    response: str
     language: str
     timestamp: datetime
+    sources: list[str] | None = None
+    charts: dict[str, Any] | None = None
 
 
 class ConversationSummary(BaseModel):

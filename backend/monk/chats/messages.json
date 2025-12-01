@@ -129,5 +129,723 @@
       ],
       "confidence": null
     }
+  },
+  {
+    "id": "f5561510-5576-4093-b166-af1af6535f49",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the retail vacancy table in the 'Economic Development Update – Q4 2024', what was the retail vacancy area in Q4 2024 in square feet, and how did it change year-over-year and quarter-over-quarter?",
+    "timestamp": "2025-11-30T20:45:06.968662+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "40de6aaa-7286-48b2-8854-b52350944c88",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "Thank you for your question about Ottawa's economic development. Based on our local data, I can provide detailed analysis. What specific information would you like to know about business opportunities, investment climate, or economic programs?",
+    "timestamp": "2025-11-30T20:45:06.969662+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [],
+      "confidence": null
+    }
+  },
+  {
+    "id": "da96be21-947a-43d1-a651-586c7ecdb70c",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "In the 'Economic Development Update – Q4 2024' snapshot, what was Ottawa’s unemployment rate in Q4 2024? Please answer with the exact percentage reported in the document.",
+    "timestamp": "2025-11-30T20:45:57.677279+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "79c17921-dc0c-40b1-b865-da523b5e4372",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "Thank you for your question about Ottawa's economic development. Based on our local data, I can provide detailed analysis. What specific information would you like to know about business opportunities, investment climate, or economic programs?",
+    "timestamp": "2025-11-30T20:45:57.677337+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [],
+      "confidence": null
+    }
+  },
+  {
+    "id": "f2a0f780-4ae8-41a6-9cf3-c6c9c13fb9c4",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-11-30T20:46:47.144940+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "bcee7f01-f57d-45a4-9854-e72f102875a7",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "Thank you for your question about Ottawa's economic development. Based on our local data, I can provide detailed analysis. What specific information would you like to know about business opportunities, investment climate, or economic programs?",
+    "timestamp": "2025-11-30T20:46:47.145541+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [],
+      "confidence": null
+    }
+  },
+  {
+    "id": "40d2254f-02e3-4bf8-bae5-cfaf50ab7145",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-11-30T21:14:53.011022+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "75fa82a8-4ba3-4a11-b42d-6baf5b10b608",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "I don't have access to the uploaded documents. However, I can suggest some alternatives to find the information you are looking for. \n\nIf you provide me with the content of the 'Economic Development Update – Q4 2024' snapshot, I can help you find the population of Ottawa in Q4 2024. Alternatively, I can provide you with general information about Ottawa's population based on available data up to my knowledge cutoff date of December 2023. \n\nPlease let me know how I can assist you further.",
+    "timestamp": "2025-11-30T21:14:53.011022+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [],
+      "confidence": null
+    }
+  },
+  {
+    "id": "63ccefc0-371c-414a-96ee-472ae66097c6",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-11-30T21:15:59.986886+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "7db9643f-bd9a-4e83-a42f-d31b696885ca",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "I don't have access to the uploaded documents, and I couldn't find any information about the 'Economic Development Update – Q4 2024' snapshot. If you could provide me with the document or more context, I'll be happy to help you find the answer. Alternatively, I can provide general information about Ottawa's population, but it may not be specific to Q4 2024.",
+    "timestamp": "2025-11-30T21:15:59.987885+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [],
+      "confidence": null
+    }
+  },
+  {
+    "id": "808d5b52-461a-424e-9eb2-6cb7db4fe365",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T00:13:59.330617+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "4c7c4f49-ba6b-4bf1-830d-4686b9994fc1",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The provided document excerpts do not mention the population of Ottawa in Q4 2024. The excerpts discuss various economic developments, such as the Ottawa Senators' new arena, the impact of U.S. tariffs, and the real estate market, but they do not include information on the population of Ottawa. Therefore, it is not possible to provide an exact number for the population of Ottawa in Q4 2024 based on the given context.",
+    "timestamp": "2025-12-01T00:13:59.331129+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "de6eba59-8a8c-4332-8f4b-73d55b1482e8",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T01:46:05.910020+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "586d321d-3e5c-4976-a946-36d5b8060925",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The provided excerpts from the 'Economic Development Update – Q4 2024' do not mention the population of Ottawa in Q4 2024. The information provided focuses on various economic developments, projects, and initiatives in Ottawa, but it does not include population data. Therefore, it is not possible to provide an exact number for the population of Ottawa in Q4 2024 based on the given context.",
+    "timestamp": "2025-12-01T01:46:05.911609+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "f71737e0-2f2f-4b71-850e-edba43b301db",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T01:49:58.755852+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "b051d988-f0aa-49ba-86b2-c8000ac06835",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The provided excerpts from the 'Economic Development Update – Q4 2024' do not mention the population of Ottawa in Q4 2024. The excerpts discuss various economic development updates, such as the Ottawa Senators' new arena, Ottawa's economy showing resilience amidst U.S. tariffs, and the real estate market, but do not provide information on the population of Ottawa. Therefore, it is not possible to provide an exact number for the population of Ottawa in Q4 2024 based on the given documents.",
+    "timestamp": "2025-12-01T01:49:58.760239+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "7eb60477-eed8-4929-870c-b9c9bce72267",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T01:54:31.425090+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "efb8d1b9-ecf0-4f0b-b54b-49cd303c9ad1",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The provided excerpts from the 'Economic Development Update – Q4 2024' do not mention the population of Ottawa in Q4 2024. The documents discuss various economic developments, initiatives, and trends in Ottawa, but they do not include information about the city's population.",
+    "timestamp": "2025-12-01T01:54:31.428091+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "c4e5d880-2319-420b-adbe-a5c44501ef44",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0cmF2aXNAZXhhbXBsZS5jb20iLCJ1c2VyX2lkIjoiNTI0NWY0MTAtZjA3Ni00M2FmLThjNDUtNTRkMmI4NTBjM2YwIiwicm9sZSI6InJlc2VhcmNoZXIiLCJleHAiOjE3NjQ1NTU5NTB9.sNAckTRXWVAQMBhUsU9eenVt4ais2y061eW-eOSe79U",
+    "timestamp": "2025-12-01T01:56:27.585188+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "6aff3e59-d650-4ae8-bab2-c4229756a420",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "It seems like you provided a JSON Web Token (JWT) instead of a question. The token appears to be encoded and contains user information, but it's not a question related to Ottawa economic development or business research.\n\nIf you could provide the actual question you have, I'd be happy to help. I can use the context from the Economic Development Update excerpts you provided to answer your question. Please go ahead and ask away!",
+    "timestamp": "2025-12-01T01:56:27.586189+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "5da9100e-3116-4f25-af3d-18f08fe1ee67",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T01:56:38.832846+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "15d1c39d-f45f-4c9a-9d58-4ad20237a849",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "According to the provided excerpts from the 'Economic Development Update – Q4 2024', there is no mention of the population of Ottawa in Q4 2024. The excerpts discuss various economic developments, agreements, and trends in Ottawa, but do not provide information on the city's population. Therefore, it is not possible to provide an exact number for the population of Ottawa in Q4 2024 based on the given documents.",
+    "timestamp": "2025-12-01T01:56:38.834261+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "74328d31-e488-4d99-a94a-64d5cc1a751a",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T02:22:47.171426+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "f166dffe-b67e-4adb-8391-a68f006b7c7b",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The provided excerpts from the 'Economic Development Update – Q4 2024' do not mention the population of Ottawa in Q4 2024. The documents discuss various economic developments, projects, and trends in Ottawa, but they do not include information about the city's population. Therefore, it is not possible to provide an exact number for the population of Ottawa in Q4 2024 based on the given context.",
+    "timestamp": "2025-12-01T02:22:47.172564+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "323bd126-fbe1-4615-af04-f89a6191a533",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T02:24:25.541894+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "ca838823-4ae3-4d53-bdbe-b770b7a061f6",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The provided document excerpts do not mention the population of Ottawa in Q4 2024. The excerpts discuss various economic development updates, including the Ottawa Senators' new arena, Ottawa's economy showing resilience amidst U.S. tariffs, the real estate market, and public safety initiatives, but do not provide information on the city's population. Therefore, it is not possible to provide an exact number for the population of Ottawa in Q4 2024 based on the given context.",
+    "timestamp": "2025-12-01T02:24:25.542840+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "5dfc9610-2005-4622-9245-14e9bda55b10",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T02:27:35.317789+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "a0097fb7-4c81-4e13-9f2c-c4c473cfe0ae",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The provided excerpts from the 'Economic Development Update – Q4 2024' do not mention the population of Ottawa in Q4 2024. The documents discuss various economic developments, agreements, and projects in Ottawa, but they do not include information about the city's population. Therefore, it is not possible to provide an exact number for the population of Ottawa in Q4 2024 based on the given context.",
+    "timestamp": "2025-12-01T02:27:35.319794+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "03791d06-073d-4243-b0dd-4d9a6dbc4630",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T02:57:57.892048+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "d6999512-a3be-4e9e-9995-95230e7f8eef",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The provided document excerpts do not mention the population of Ottawa in Q4 2024. The excerpts discuss various economic developments, initiatives, and trends in Ottawa, but they do not include information about the city's population. Therefore, it is not possible to provide an exact number for the population of Ottawa in Q4 2024 based on the given information.",
+    "timestamp": "2025-12-01T02:57:57.896112+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "2693c38b-5ab8-4612-aa44-a18ee60e184c",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T03:02:56.859286+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "8da0aa56-fb0c-49e4-a58f-e7322d92574e",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The provided excerpts from the 'Economic Development Update – Q4 2024' do not mention the population of Ottawa in Q4 2024. The excerpts discuss various economic development updates, such as the Ottawa Senators' new arena, Ottawa's economy showing resilience amidst U.S. tariffs, and the real estate market, but do not provide information on the population. Therefore, it is not possible to provide an exact number for the population of Ottawa in Q4 2024 based on the given context.",
+    "timestamp": "2025-12-01T03:02:56.862051+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "631effd3-b841-4b70-9672-56a639815964",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T05:09:39.789406+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "e56b2c57-947e-4614-9673-4b17954b0b61",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The provided document excerpts do not mention the population of Ottawa in Q4 2024. They discuss various economic development updates, such as the Ottawa Senators' new arena, Ottawa's economy showing resilience amidst U.S. tariffs, and the real estate market, but do not provide information on the population. Therefore, it is not possible to provide an exact number for the population of Ottawa in Q4 2024 based on the given context.",
+    "timestamp": "2025-12-01T05:09:39.792409+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "0d607111-87cc-4e9c-a07b-c1539dcba665",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T06:05:32.454161+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "1a048eed-f69d-4d23-b611-26d1f15aa0f8",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The provided document excerpts do not mention the population of Ottawa in Q4 2024. They discuss various economic development updates, such as the Ottawa Senators' new arena, Ottawa's economy showing resilience amidst U.S. tariffs, and the real estate market, but do not provide information on the population of Ottawa. Therefore, it is not possible to provide an exact number for the population of Ottawa in Q4 2024 based on the given context.",
+    "timestamp": "2025-12-01T06:05:32.456188+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "73c79d90-b35c-4322-87be-5c39609982a6",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T06:26:24.877036+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "f85b592a-ac68-4d01-abba-91a3f457d6fa",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The population of Ottawa in Q4 2024 was 1,097,760.",
+    "timestamp": "2025-12-01T06:26:24.879040+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "38e852ab-fa04-44ba-a802-bb89a1c9885c",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T06:30:19.488471+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "90966573-dcda-498a-a7dd-2216eda39e61",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The population of Ottawa in Q4 2024 was 1,097,760.",
+    "timestamp": "2025-12-01T06:30:19.490472+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "cb75b546-05b0-4f33-a684-6d56b3ac187b",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "In the 'Economic Development Update – Q4 2024' snapshot, what was Ottawa’s unemployment rate in Q4 2024? Please answer with the exact percentage reported in the document.",
+    "timestamp": "2025-12-01T06:34:58.775487+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "29bddd42-38f8-4a04-a14a-120857f5f5f8",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot, Ottawa's unemployment rate in Q4 2024 was 6.1%.",
+    "timestamp": "2025-12-01T06:34:58.777483+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "31662367-a1a9-4e57-a55e-a1af99fe74c5",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the retail vacancy table in the 'Economic Development Update – Q4 2024', what was the retail vacancy area in Q4 2024 in square feet, and how did it change year-over-year and quarter-over-quarter?",
+    "timestamp": "2025-12-01T06:35:09.416819+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "eeebd060-317d-4458-a2f9-36e26af08f0c",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "According to the 'Economic Development Update – Q4 2024', the retail vacancy area in Q4 2024 was 1,089,848 square feet. \n\nYear-over-year, the retail vacancy area increased by 9.0% from Q4 2023. \nQuarter-over-quarter, the retail vacancy area increased by 3.8% from Q3 2024.",
+    "timestamp": "2025-12-01T06:35:09.421817+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "f61bee38-b323-4b7d-86e0-e09b13b6af76",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T08:20:36.646939+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "83cd06cb-808c-469f-95f1-23c99883b2b5",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot, the population of Ottawa in Q4 2024 was 1,097,760.",
+    "timestamp": "2025-12-01T08:20:36.649759+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "56b29337-4dbe-472b-9981-5f3e7e5bf6d2",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T08:30:47.675619+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "2ab778da-53c7-45f3-bf7e-aa7e3d6db8ad",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "The population of Ottawa in Q4 2024 was 1,097,760.\n\n---\nOriginal excerpts used:\n\n[Economic Development Update – Q4 2024  (page 1)]\nfuture planning, and community development. The summit\naimed to foster better communication between rural stakeholders and city officials, ensuring that\nthe unique needs of these communities are met. Enhancing services in rural Ottawa is expected\nto support local economies, particularly in agriculture and small businesses, contributing to the\noverall economic health of the region. Source: City of Ottawa\n• Ottawa Senators Secure Agreement for New Arena at LeBreton Flats: The Ottawa Senators, in\npartnership with the National Capital Commission (NCC), have reached an agreement to construct\na new arena in the LeBreton Flats district. This development is part of a broader mixed-use project\naimed at revitalizing the area. The new arena is expected to boost local employment during and\nafter construction, stimulate investment, and enhance Ottawa's appeal as a destination for major\nevents and entertainment.\n\n[Economic Development Update – Q4 2024  (page 1)]\nrate to 3%, marking the sixth consecutive reduction. The governing council noted that\nongoing trade tensions may lead to decreased economic activity, higher inflation, and a weakened\nCanadian dollar. Some Canadian businesses are considering relocating to the U.S., which could\nexacerbate capital flight and harm competitiveness. The Bank will continue to monitor the\nsituation closely, especially regarding supply chains and sectoral impacts. Source: Reuters\n• Ottawa's Economy Shows Resilience Amidst U.S. Tariffs: Despite the imposition of a 25% tariff\non all Canadian imports by the U.S. on February 1, 2025, Ottawa's economy is expected to remain\nresilient. Factors contributing to this outlook include declining interest rates and ongoing\ninfrastructure projects, such as the Light Rail Transit (LRT) expansion. These elements are\nanticipated to mitigate potential negative impacts, supporting continued economic growth in the\nregion.\n\n[Economic Development Update – Q4 2024  (page 1)]\ning the area. The new arena is expected to boost local employment during and\nafter construction, stimulate investment, and enhance Ottawa's appeal as a destination for major\nevents and entertainment. The project underscores the city's commitment to urban renewal and\neconomic diversification. Source: CTV News\n• Ottawa's Real Estate Market Sees Increase in Listings and Sales in 2024: The Ottawa Real Estate\nBoard (OREB) reported a notable rise in active residential listings and home sales throughout\n2024. As of November 30, there were 4,036 active residential listings, marking a 38.2% increase\ncompared to the same period in 2023. Home sales in November 2024 totaled 1,059 units,\nreflecting an 11.8% increase from November 2023. The benchmark price for single-family homes\nreached $722,400, a 2.1% year-over-year rise, while townhouses saw a modest 0.3% increase to\n$491,500. Conversely, apartment prices experienced a 3.7% decline, with the benchmark price at\n$406,200.\n\n[Economic Development Update – Q4 2024  (page 1)]\non, which\n1\nbegan operations on January 6, 2025, is expected to improve public transportation options,\nreduce traffic congestion, and support economic growth in the region by facilitating easier\nmovement for residents and visitors alike. Source: OC-Transpo\nWhat Happened in Q4 2024: October, November and December 2024\n• Ontario-Ottawa Agreement Secures $48 Million for Public Safety Initiatives: The Ontario\nSolicitor General and Treasury Board have endorsed seven public safety initiatives under the\nOntario-Ottawa Agreement, allocating $48 million over three years to enhance community safety.\nThis funding supports evidence-based approaches and contemporary best practices, focusing on\ncommunity engagement and partnerships to address safety issues holistically. The initiatives aim\nto strengthen Ottawa's resilience and ensure a secure environment for all residents, contributing\npositively to the city's economic stability and attractiveness for investment.\n\n[Economic Development Update – Q4 2024  (page 1)]\ning\ninfrastructure projects, such as the Light Rail Transit (LRT) expansion. These elements are\nanticipated to mitigate potential negative impacts, supporting continued economic growth in the\nregion. Source: Ottawa Business Journal\n• Launch of Downtown Vibrancy Office to Revitalize Ottawa's Core: At the start of 2025, Ottawa\nintroduced a new \"downtown vibrancy office\" aimed at rejuvenating the city's core. Supported\nby a $450,000 grant from the provincial government's $20-million \"New Deal\" for Ottawa, the\noffice focuses on initiatives to attract businesses, residents, and visitors to the downtown area.\nEfforts include enhancing public spaces, supporting local events, and collaborating with\nstakeholders to address challenges such as commercial vacancies. This initiative seeks to stimulate\neconomic activity, foster a vibrant urban environment, and reinforce Ottawa's position as a\ndynamic capital city.\n\n[Economic Development Update – Q4 2024  (page 1)]\nt.)* Q4-23 Q3-24 Q4-24\nConsumer Price Index 160.3 163.9 163.5 160\nInflation 2.7% 2.4% 2.0%\n*2006 boundaries 155\nThe Consumer Price Index saw a year-over-year increase 150\nof 2.0% to 163.5 in Q4 2024. The inflation rate decreased\n0.4 percentage points from the previous quarter and\ndecreased 0.7 percentage points since Q4 of last year.\nAverage Weekly Earning\nSource: CMHC Custom Data\nOttawa, CMA (ON pt.)* Q4-23 Q3-24 Q4-24\nAvg. Weekly Earning $1,405 $1,445 $1,475\n*2021 boundaries\nThe average weekly earning increased 4.9 % year-over-\nyear and decreased 2.1% from the previous quarter to\nreach $1,475 in Q4 2024.\n6\n22-tcO 32-naJ 32-rpA 32-luJ 32-tcO 42-naJ 42-rpA 42-luJ 42-tcO\nConsumer Price Index (2002=100)\n1,500\n1,450\n1,400\n1,350\n1,300\nnaJ beF raM rpA yaM nuJ luJ guA peS tcO voN ceD\n1,150,000\n1,100,000\n1,050,000\n1,000,000\n950,000\nAverage Weekly Earnings\nYTD 2023 YTD 2024\n9102-ceD 0202-luJ 0202-ceD 1202-luJ 1202-ceD 2202-luJ 2202-ceD 3202-luJ 3202-ceD 4202-luJ 4202-ceD\nPopulation\nEconomy\nCon\n\n[Economic Development Update – Q4 2024  (page 1)]\nMarket\nSource: Ottawa Real Estate Board\nOttawa Q4-23 Q3-24 Q4-24\nArea*\nAverage $ 642,154 $ 675,167 $ 666,523\nResale Price\nResale Units 2,105 3,388 2,851\nSold\nA total of 2,851 units were sold through the MLS system\nin Q4 2024, a decrease of 15.9% from the previous\nquarter, however, it increased by 35.4% year-over-year.\nThe average resale price decreased by 1.3% from the\nprevious quarter and increased by 3.8% year-over-year.\nOttawa Area* YTD-23 YTD-24\nAverage Resale Price** $652,248 $672,712\nResale Units Sold 13,250 13,359\n* Includes City of Ottawa and surrounding areas where OREB\nmembers sold properties (i.e. Carleton Place, Kemptville, Clarence-\nRockland, etc.)\n5\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nHousing Starts\nHousing Starts by Type\n2,000\n1,000\n0\nSingle Semi Row Apartment\nQ4 2023 Q4 2024\n2,000\n1,500\n1,000\n500\n0\nnaJ beF raM rpA yaM nuJ luJ guA peS tcO voN ceD\n$750,000\n$700,000\n$650,000\n$600,000\n$550,000\nResale Units Sold\n2023 2024\n32-na\n\n[Economic Development Update – Q4 2024  (page 1)]\nand increased 1.0 percentage\n4.0%\npoints from the last quarter to reach 5.4% in Q4 2024.\nOttawa, City Q4-23 Q3-24 Q4-24\n3.0%\nRetail Vacancy Rate 2.0% 2.1% 2.2%\nIn Q4, 2024, the retail vacancy rate has increased in 0.1 2.0%\npercentage points to 2.2% from the previous quarter\n(Q3 2024) at 2.1%, as well 0.2 percentage points from\nQ4 of last year. 1.0%\nRetail Vacancy by Square Footage\n0.0%\nSource: Marcus & Millichap for Retail Market Reports\nRetail Industrial\nOttawa, City Q4-23 Q3-24 Q4-24 Q4 2023 Q4 2024\nRentable 49,301,741 49,347,169 49,357,703\nBuilding Area\nVacant (sq ft) 999,857 1,050,169 1,089,848\nRentable Building Area (RBA), for retail uses increased\nby 55,962 sq. ft year-over-year and 10,534 sq. ft when\ncompared to the previous quarter. The retail vacancy\narea increased 9.0% year-over-year and increased by\n3.8% from the previous quarter to reach 1,089,848 sq.ft\nin Q4 2024.\n8\nNote:\nMost of the indicators are based on two geographic boundaries depending on the source data.\n\n[Economic Development Update – Q4 2024  (page 1)]\nrates year-over-year, while\n0.0%\noffice class B experienced a decrease of 0.3 percentage\nAll Office Class A Class B Class C\npoints and office class C experienced a decrease of 1.8\npercentage points. Q4 2023 Q4 2024\n7\n22-tcO 32-naJ 32-rpA 32-luJ 32-tcO 42-naJ 42-rpA 42-luJ 42-tcO\nConstruction Permits (x $1,000)\n400,000\n300,000\n200,000\n100,000\n0\n22-tcO 32-naJ 32-rpA 32-luJ 32-tcO 42-naJ 42-rpA 42-luJ 42-tcO\nConstruction Permits (x $1,000)\nResidential Non-residential\nEconomy\nIndustrial and Retail Vacancy Rates\nSource: Cushman & Wakefield for Industrial Reports, and Marcus &\nIndustrial and Retail Vacancy Rates\nMillichap for Retail Market Reports\n6.0%\nOttawa, City Q4-23 Q3-24 Q4-24\nInd. Vacancy Rate 2.8% 4.4% 5.4%\n5.0%\nThe industrial vacancy rate increased 2.6 percentage\npoints year-over-year and increased 1.0 percentage\n4.0%\npoints from the last quarter to reach 5.4% in Q4 2024.\nOttawa, City Q4-23 Q3-24 Q4-24\n3.0%\nRetail Vacancy Rate 2.0% 2.1% 2.2%\nIn Q4, 2024, the retail vacancy rate has\n\n[Economic Development Update – Q4 2024  (page 1)]\no address challenges such as commercial vacancies. This initiative seeks to stimulate\neconomic activity, foster a vibrant urban environment, and reinforce Ottawa's position as a\ndynamic capital city. Source: Ottawa Business Journal\n• Ottawa's Trillium Line Expansion Enhances Transit Connectivity: The Trillium Line, part of\nOttawa's O-Train light rail system, has undergone a significant expansion as part of the Stage 2\nLight Rail Transit (LRT) project. The extension adds 11 kilometers of new track, extending the line\nsouth from Greenboro to Limebank, with new stations at South Keys, Leitrim, Bowesville, and\nLimebank. Additionally, a 4-kilometer branch line now connects South Keys station to Macdonald-\nCartier International Airport, enhancing transit accessibility for travelers. This expansion, which\n1\nbegan operations on January 6, 2025, is expected to improve public transportation options,\nreduce traffic congestion, and support economic growth in the region by facilitating easier\nmovem\n\n[Economic Development Update – Q4 2024  (page 1)]\n4.5% 5.7%\nParticipation Rate 69.2% 68.9%\n*2021 boundaries\n4\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nUnemployment Rate\n800\n600\n400\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nLabour Force\nLabour force (x 1,000) Employed (x 1,000)\nEmployed Labour Force by Sectors\nPublic administration\nWholesale and retail trade\nProfessional, scientific and technical services\nHealth care and social assistance\nEducational services\nConstruction\nAccommodation and food services\nFinance, insurance, real estate, rental and leasing\nInformation, culture and recreation\nManufacturing\nTransportation and warehousing\nBusiness, building and other support services\nOther services (except public administration)\nUtilities\nAgriculture\nForestry, fishing, mining, quarrying, oil and gas\n0 20,000 40,000 60,000 80,000 100,000120,000140,000160,000\nQ4 2024 Q3 2024 Q4 2023\nHousing\nHousing Starts\nSource: CMHC Housing Market Information Portal\nOttawa\n\n[Economic Development Update – Q4 2024  (page 1)]\nfishing, mining, quarrying, oil and gas\n0 20,000 40,000 60,000 80,000 100,000120,000140,000160,000\nQ4 2024 Q3 2024 Q4 2023\nHousing\nHousing Starts\nSource: CMHC Housing Market Information Portal\nOttawa, City Q4-23 Q3-24 Q4-24\nHousing Starts 2,521 2,500 1,770 1500\nSingle 345 301 364\n1000\nSemi 34 28 42\nRow 445 570 671\n500\nApartment 1,697 1,601 693\n0\nOverall, housing starts declined by 29.8% from Q4 2023\nto Q4 2024. While all ground-oriented dwelling types\nsaw year-over-year increases in starts, apartment starts\ndropped by 59.2%, whereas single-detached homes\nincreased by 5.5%, semi-attached homes rose by 23.5%,\nand row-house starts surged by 50.8%.\nOttawa, City YTD-23 YTD-24\nHousing Starts 8,632 6,800\nSingle 1,211 1,104\nSemi 114 108\nRow 1,574 1,911\nApartment 5,733 3,677\nHousing Sales, Resale Market\nSource: Ottawa Real Estate Board\nOttawa Q4-23 Q3-24 Q4-24\nArea*\nAverage $ 642,154 $ 675,167 $ 666,523\nResale Price\nResale Units 2,105 3,388 2,851\nSold\nA total of 2,851 units were sold through t\n\n[Economic Development Update – Q4 2024  (page 1)]\nverage Resale Price $642,154 $675,167 $666,523 ❌\nNegative\nResale Units Sold 2,105 3,388 2,851 ✔\nPositive\nPopulation 1,083,550 1,094,340 1,097,760 ✔\nPositive\nInflation 2.7% 2.4% 2.0% ✔\nPositive\nAverage Weekly $1,405 $1,445 $1,475 ✔\nPositive\nEarning\nConstruction Permit $961,460 $843,000 $1,055,632 ✔\nPositive\nValue\n(seasonally adjusted)\nOffice Vacancy Rate 12.2% 11.5% 11.6% ✔\nPositive\nRetail Vacancy Rate 2.0% 2.1% 2.2% ❌\nNegative\nIndustrial Vacancy 2.8% 4.4% 5.4% ❌\nNegative\nRate\nPlease refer to individual tables below for more details.\n*Population data is available bi-annually for quarters Q2 and Q4.\n3\nLabour Force\nLabour Force, Seasonally Adjusted, 3-Month\nMoving Average\nSource: Statistics Canada, Table 14-10-0380-01\nOttawa, CMA (ON pt.)* Q4-24 Q3-24 Q4-24\n7.0%\nLabour Force (x 1,000) 691.4 702.8 714.5 6.0%\nEmployed (x 1,000) 658.1 658.1 670.9 5.0%\n4.0%\nUnemployed (x 1,000) 33.3 44.7 43.6\n3.0%\nUnemployment Rate 4.8% 6.4% 6.1% 2.0%\n1.0%\nParticipation Rate 70.1% 69.1% 69.5%\n0.0%\n*2021 bound\n\n[Economic Development Update – Q4 2024  (page 1)]\n,100,000\n1,050,000\n1,000,000\n950,000\nAverage Weekly Earnings\nYTD 2023 YTD 2024\n9102-ceD 0202-luJ 0202-ceD 1202-luJ 1202-ceD 2202-luJ 2202-ceD 3202-luJ 3202-ceD 4202-luJ 4202-ceD\nPopulation\nEconomy\nConstruction Permits, Seasonally Adjusted\nSource: Statistics Canada, Table 34-10-0066-01 5 00,000\n400,000\nOttawa, CMA Q4-23 Q3-24 Q4-24\n(ON pt.)* 3 00,000\nTotal Permits $961,460 $843,679 $1,055,632 2 00,000\nResidential $693,766 $578,239 $782,233 100,000\nNon-residential $267,693 $265,440 $273,399\n0\n(x $1,000) *2006 boundaries\nCompared to Q4 of last year, total construction permit\nvalue increased by 9.8% in Q4 2024, largely due to a 12.8%\nincrease in residential permit value and a 2.1% increase in\nnon-residential permit. Since last quarter, total construction\npermit value increased by 26.6%, where residential permit\nvalue increased by 37.3% and non-residential permit values\nincreased 3.5%.\nOttawa, CMA (ON pt.)* YTD-23 YTD-24\nTotal Permits 3,383,222 3,595,969\nResidential 2,279,361 2,602,989\nNon-\n\n[Economic Development Update – Q4 2024  (page 1)]\ns\nreached $722,400, a 2.1% year-over-year rise, while townhouses saw a modest 0.3% increase to\n$491,500. Conversely, apartment prices experienced a 3.7% decline, with the benchmark price at\n$406,200. OREB attributes the market's recovery to buyers gradually returning, influenced by\nstabilizing interest rates and upcoming changes in mortgage regulations. This trend suggests a\nstrengthening housing market in Ottawa, potentially boosting economic activity and consumer\nconfidence in the region. Source: Ottawa CityNews\n2\nSnapshot\nQ4-2023 Q3-2024 Q4-2024 Year-over-year Status:\nQ4 2024 Compared to\nQ4-2023\nEmployed Labour 658,067 658,133 670,900 ✔\nPositive\nForce\nUnemployment Rate 4.8% 6.4% 6.1% ❌\nNegative\nParticipation Rate 70.1% 69.1% 69.5% ❌\nNegative\nHousing Starts 2,521 2,500 1,770 ❌\nNegative\nAverage Resale Price $642,154 $675,167 $666,523 ❌\nNegative\nResale Units Sold 2,105 3,388 2,851 ✔\nPositive\nPopulation 1,083,550 1,094,340 1,097,760 ✔\nPositive\nInflation 2.7% 2.4% 2.0% ✔\nPositive\nAverage\n\n[Economic Development Update – Q4 2024  (page 1)]\n1,000\n0\nSingle Semi Row Apartment\nQ4 2023 Q4 2024\n2,000\n1,500\n1,000\n500\n0\nnaJ beF raM rpA yaM nuJ luJ guA peS tcO voN ceD\n$750,000\n$700,000\n$650,000\n$600,000\n$550,000\nResale Units Sold\n2023 2024\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nAverage Resale Price\nLiving\nPopulation\nSource: City of Ottawa estimate*\nOttawa, Q4-23 Q2-24 Q4-24\nCity\nPopulation 1,083,550 1,094,340 1,097,760\n*Population estimate reported twice per year\nThe population estimate for the city of Ottawa increased\n1.3% year-over-year to reach 1,097,760 at end of year\n2024.\nConsumer Price Index (2002=100)\nSource: Statistics Canada, Table 18-10-0004-01\n165\nOttawa, CMA (ON pt.)* Q4-23 Q3-24 Q4-24\nConsumer Price Index 160.3 163.9 163.5 160\nInflation 2.7% 2.4% 2.0%\n*2006 boundaries 155\nThe Consumer Price Index saw a year-over-year increase 150\nof 2.0% to 163.5 in Q4 2024.\n\n[Economic Development Update – Q4 2024  (page 1)]\n02.8 714.5 6.0%\nEmployed (x 1,000) 658.1 658.1 670.9 5.0%\n4.0%\nUnemployed (x 1,000) 33.3 44.7 43.6\n3.0%\nUnemployment Rate 4.8% 6.4% 6.1% 2.0%\n1.0%\nParticipation Rate 70.1% 69.1% 69.5%\n0.0%\n*2021 boundaries\nYear-over-year, the overall labour force increased 3.3%\nwhile employed residents increased by 2.0%.\nMeanwhile, the unemployment rate also increased 1.3%\npercentage points from Q4 2023. Other Services (except\nPublic Administration), Health Care and Social\nAssistance, and Transportation and Warehousing saw\nthe largest increases in employment growth year-over-\nyear. Meanwhile, Wholesale and Retail Trade; Education\nServices and Information, Culture and Recreation sectors\nsaw the largest decreases in employment growth over\nthe same period.\nOttawa, CMA (ON pt.)* YTD-23 YTD-24\nUnemployment Rate 4.5% 5.7%\nParticipation Rate 69.2% 68.9%\n*2021 boundaries\n4\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nUnemployment Rate\n800\n600\n400\n32-naJ 32-raM 32-yaM 32-l\n\n[Economic Development Update – Q4 2024  (page 1)]\nEconomic Development Update – Q4 2024\nThe City of Ottawa Economic Development Update provides an overview of quarterly and annual\neconomic indicators to the city’s economy. The Q4 2024 update covers the months of October,\nNovember and December 2024. This report will be available on Ottawa.ca and via an email subscription.\nNew and Noteworthy in Q1 2025: January, February and March 2025\n• Bank of Canada Warns of Economic Impact from Prolonged U.S. Trade Conflict: The Bank of\nCanada has expressed concerns that a prolonged trade conflict with the United States could\npermanently reduce Canada's GDP. In response to potential U.S. tariffs, the Bank has reduced its\nkey policy rate to 3%, marking the sixth consecutive reduction. The governing council noted that\nongoing trade tensions may lead to decreased economic activity, higher inflation, and a weakened\nCanadian dollar.\n\n[Economic Development Update – Q4 2024  (page 1)]\nyear-over-year and increased by\n3.8% from the previous quarter to reach 1,089,848 sq.ft\nin Q4 2024.\n8\nNote:\nMost of the indicators are based on two geographic boundaries depending on the source data. The\napplicable geography for each dataset is indicated on the top left corner of each table.\n“Ottawa, City” represents the City of Ottawa;\n“Ottawa CMA (ON pt.)” represents the Ontario portion of the Ottawa-Gatineau Census Metropolitan\nArea. Geographical boundaries vary depending on census year.\n9\n\n[Economic Development Update – Q4 2024  (page 1)]\ny. The initiatives aim\nto strengthen Ottawa's resilience and ensure a secure environment for all residents, contributing\npositively to the city's economic stability and attractiveness for investment. Source: City of Ottawa\n• Rural Summit 2024 Addresses Service Improvements for Ottawa's Rural Communities: The Rural\nSummit 2024, held in October, focused on recommending improvements to city services for\nOttawa's rural residents and communities. A Resident Working Group, formed in January 2024\nwith representatives from each rural ward, organized the summit to address issues specific to\nrural areas, including service delivery, future planning, and community development. The summit\naimed to foster better communication between rural stakeholders and city officials, ensuring that\nthe unique needs of these communities are met.",
+    "timestamp": "2025-12-01T08:30:47.678623+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "629665c0-1179-411c-80c1-577fa8a0d064",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "In the 'Economic Development Update – Q4 2024' snapshot, what was Ottawa’s unemployment rate in Q4 2024? Please answer with the exact percentage reported in the document.",
+    "timestamp": "2025-12-01T08:33:06.520083+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "53240696-5922-4751-875c-b3458551a301",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot, Ottawa's unemployment rate in Q4 2024 was 6.1%.\n\n---\nOriginal excerpts used:\n\n[Economic Development Update – Q4 2024  (page 1)]\nrate to 3%, marking the sixth consecutive reduction. The governing council noted that\nongoing trade tensions may lead to decreased economic activity, higher inflation, and a weakened\nCanadian dollar. Some Canadian businesses are considering relocating to the U.S., which could\nexacerbate capital flight and harm competitiveness. The Bank will continue to monitor the\nsituation closely, especially regarding supply chains and sectoral impacts. Source: Reuters\n• Ottawa's Economy Shows Resilience Amidst U.S. Tariffs: Despite the imposition of a 25% tariff\non all Canadian imports by the U.S. on February 1, 2025, Ottawa's economy is expected to remain\nresilient. Factors contributing to this outlook include declining interest rates and ongoing\ninfrastructure projects, such as the Light Rail Transit (LRT) expansion. These elements are\nanticipated to mitigate potential negative impacts, supporting continued economic growth in the\nregion.\n\n[Economic Development Update – Q4 2024  (page 1)]\ning\ninfrastructure projects, such as the Light Rail Transit (LRT) expansion. These elements are\nanticipated to mitigate potential negative impacts, supporting continued economic growth in the\nregion. Source: Ottawa Business Journal\n• Launch of Downtown Vibrancy Office to Revitalize Ottawa's Core: At the start of 2025, Ottawa\nintroduced a new \"downtown vibrancy office\" aimed at rejuvenating the city's core. Supported\nby a $450,000 grant from the provincial government's $20-million \"New Deal\" for Ottawa, the\noffice focuses on initiatives to attract businesses, residents, and visitors to the downtown area.\nEfforts include enhancing public spaces, supporting local events, and collaborating with\nstakeholders to address challenges such as commercial vacancies. This initiative seeks to stimulate\neconomic activity, foster a vibrant urban environment, and reinforce Ottawa's position as a\ndynamic capital city.\n\n[Economic Development Update – Q4 2024  (page 1)]\nfuture planning, and community development. The summit\naimed to foster better communication between rural stakeholders and city officials, ensuring that\nthe unique needs of these communities are met. Enhancing services in rural Ottawa is expected\nto support local economies, particularly in agriculture and small businesses, contributing to the\noverall economic health of the region. Source: City of Ottawa\n• Ottawa Senators Secure Agreement for New Arena at LeBreton Flats: The Ottawa Senators, in\npartnership with the National Capital Commission (NCC), have reached an agreement to construct\na new arena in the LeBreton Flats district. This development is part of a broader mixed-use project\naimed at revitalizing the area. The new arena is expected to boost local employment during and\nafter construction, stimulate investment, and enhance Ottawa's appeal as a destination for major\nevents and entertainment.\n\n[Economic Development Update – Q4 2024  (page 1)]\non, which\n1\nbegan operations on January 6, 2025, is expected to improve public transportation options,\nreduce traffic congestion, and support economic growth in the region by facilitating easier\nmovement for residents and visitors alike. Source: OC-Transpo\nWhat Happened in Q4 2024: October, November and December 2024\n• Ontario-Ottawa Agreement Secures $48 Million for Public Safety Initiatives: The Ontario\nSolicitor General and Treasury Board have endorsed seven public safety initiatives under the\nOntario-Ottawa Agreement, allocating $48 million over three years to enhance community safety.\nThis funding supports evidence-based approaches and contemporary best practices, focusing on\ncommunity engagement and partnerships to address safety issues holistically. The initiatives aim\nto strengthen Ottawa's resilience and ensure a secure environment for all residents, contributing\npositively to the city's economic stability and attractiveness for investment.\n\n[Economic Development Update – Q4 2024  (page 1)]\ning the area. The new arena is expected to boost local employment during and\nafter construction, stimulate investment, and enhance Ottawa's appeal as a destination for major\nevents and entertainment. The project underscores the city's commitment to urban renewal and\neconomic diversification. Source: CTV News\n• Ottawa's Real Estate Market Sees Increase in Listings and Sales in 2024: The Ottawa Real Estate\nBoard (OREB) reported a notable rise in active residential listings and home sales throughout\n2024. As of November 30, there were 4,036 active residential listings, marking a 38.2% increase\ncompared to the same period in 2023. Home sales in November 2024 totaled 1,059 units,\nreflecting an 11.8% increase from November 2023. The benchmark price for single-family homes\nreached $722,400, a 2.1% year-over-year rise, while townhouses saw a modest 0.3% increase to\n$491,500. Conversely, apartment prices experienced a 3.7% decline, with the benchmark price at\n$406,200.\n\n[Economic Development Update – Q4 2024  (page 1)]\n1,000\n0\nSingle Semi Row Apartment\nQ4 2023 Q4 2024\n2,000\n1,500\n1,000\n500\n0\nnaJ beF raM rpA yaM nuJ luJ guA peS tcO voN ceD\n$750,000\n$700,000\n$650,000\n$600,000\n$550,000\nResale Units Sold\n2023 2024\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nAverage Resale Price\nLiving\nPopulation\nSource: City of Ottawa estimate*\nOttawa, Q4-23 Q2-24 Q4-24\nCity\nPopulation 1,083,550 1,094,340 1,097,760\n*Population estimate reported twice per year\nThe population estimate for the city of Ottawa increased\n1.3% year-over-year to reach 1,097,760 at end of year\n2024.\nConsumer Price Index (2002=100)\nSource: Statistics Canada, Table 18-10-0004-01\n165\nOttawa, CMA (ON pt.)* Q4-23 Q3-24 Q4-24\nConsumer Price Index 160.3 163.9 163.5 160\nInflation 2.7% 2.4% 2.0%\n*2006 boundaries 155\nThe Consumer Price Index saw a year-over-year increase 150\nof 2.0% to 163.5 in Q4 2024.\n\n[Economic Development Update – Q4 2024  (page 1)]\nand increased 1.0 percentage\n4.0%\npoints from the last quarter to reach 5.4% in Q4 2024.\nOttawa, City Q4-23 Q3-24 Q4-24\n3.0%\nRetail Vacancy Rate 2.0% 2.1% 2.2%\nIn Q4, 2024, the retail vacancy rate has increased in 0.1 2.0%\npercentage points to 2.2% from the previous quarter\n(Q3 2024) at 2.1%, as well 0.2 percentage points from\nQ4 of last year. 1.0%\nRetail Vacancy by Square Footage\n0.0%\nSource: Marcus & Millichap for Retail Market Reports\nRetail Industrial\nOttawa, City Q4-23 Q3-24 Q4-24 Q4 2023 Q4 2024\nRentable 49,301,741 49,347,169 49,357,703\nBuilding Area\nVacant (sq ft) 999,857 1,050,169 1,089,848\nRentable Building Area (RBA), for retail uses increased\nby 55,962 sq. ft year-over-year and 10,534 sq. ft when\ncompared to the previous quarter. The retail vacancy\narea increased 9.0% year-over-year and increased by\n3.8% from the previous quarter to reach 1,089,848 sq.ft\nin Q4 2024.\n8\nNote:\nMost of the indicators are based on two geographic boundaries depending on the source data.\n\n[Economic Development Update – Q4 2024  (page 1)]\no address challenges such as commercial vacancies. This initiative seeks to stimulate\neconomic activity, foster a vibrant urban environment, and reinforce Ottawa's position as a\ndynamic capital city. Source: Ottawa Business Journal\n• Ottawa's Trillium Line Expansion Enhances Transit Connectivity: The Trillium Line, part of\nOttawa's O-Train light rail system, has undergone a significant expansion as part of the Stage 2\nLight Rail Transit (LRT) project. The extension adds 11 kilometers of new track, extending the line\nsouth from Greenboro to Limebank, with new stations at South Keys, Leitrim, Bowesville, and\nLimebank. Additionally, a 4-kilometer branch line now connects South Keys station to Macdonald-\nCartier International Airport, enhancing transit accessibility for travelers. This expansion, which\n1\nbegan operations on January 6, 2025, is expected to improve public transportation options,\nreduce traffic congestion, and support economic growth in the region by facilitating easier\nmovem\n\n[Economic Development Update – Q4 2024  (page 1)]\nrates year-over-year, while\n0.0%\noffice class B experienced a decrease of 0.3 percentage\nAll Office Class A Class B Class C\npoints and office class C experienced a decrease of 1.8\npercentage points. Q4 2023 Q4 2024\n7\n22-tcO 32-naJ 32-rpA 32-luJ 32-tcO 42-naJ 42-rpA 42-luJ 42-tcO\nConstruction Permits (x $1,000)\n400,000\n300,000\n200,000\n100,000\n0\n22-tcO 32-naJ 32-rpA 32-luJ 32-tcO 42-naJ 42-rpA 42-luJ 42-tcO\nConstruction Permits (x $1,000)\nResidential Non-residential\nEconomy\nIndustrial and Retail Vacancy Rates\nSource: Cushman & Wakefield for Industrial Reports, and Marcus &\nIndustrial and Retail Vacancy Rates\nMillichap for Retail Market Reports\n6.0%\nOttawa, City Q4-23 Q3-24 Q4-24\nInd. Vacancy Rate 2.8% 4.4% 5.4%\n5.0%\nThe industrial vacancy rate increased 2.6 percentage\npoints year-over-year and increased 1.0 percentage\n4.0%\npoints from the last quarter to reach 5.4% in Q4 2024.\nOttawa, City Q4-23 Q3-24 Q4-24\n3.0%\nRetail Vacancy Rate 2.0% 2.1% 2.2%\nIn Q4, 2024, the retail vacancy rate has\n\n[Economic Development Update – Q4 2024  (page 1)]\nverage Resale Price $642,154 $675,167 $666,523 ❌\nNegative\nResale Units Sold 2,105 3,388 2,851 ✔\nPositive\nPopulation 1,083,550 1,094,340 1,097,760 ✔\nPositive\nInflation 2.7% 2.4% 2.0% ✔\nPositive\nAverage Weekly $1,405 $1,445 $1,475 ✔\nPositive\nEarning\nConstruction Permit $961,460 $843,000 $1,055,632 ✔\nPositive\nValue\n(seasonally adjusted)\nOffice Vacancy Rate 12.2% 11.5% 11.6% ✔\nPositive\nRetail Vacancy Rate 2.0% 2.1% 2.2% ❌\nNegative\nIndustrial Vacancy 2.8% 4.4% 5.4% ❌\nNegative\nRate\nPlease refer to individual tables below for more details.\n*Population data is available bi-annually for quarters Q2 and Q4.\n3\nLabour Force\nLabour Force, Seasonally Adjusted, 3-Month\nMoving Average\nSource: Statistics Canada, Table 14-10-0380-01\nOttawa, CMA (ON pt.)* Q4-24 Q3-24 Q4-24\n7.0%\nLabour Force (x 1,000) 691.4 702.8 714.5 6.0%\nEmployed (x 1,000) 658.1 658.1 670.9 5.0%\n4.0%\nUnemployed (x 1,000) 33.3 44.7 43.6\n3.0%\nUnemployment Rate 4.8% 6.4% 6.1% 2.0%\n1.0%\nParticipation Rate 70.1% 69.1% 69.5%\n0.0%\n*2021 bound\n\n[Economic Development Update – Q4 2024  (page 1)]\nfishing, mining, quarrying, oil and gas\n0 20,000 40,000 60,000 80,000 100,000120,000140,000160,000\nQ4 2024 Q3 2024 Q4 2023\nHousing\nHousing Starts\nSource: CMHC Housing Market Information Portal\nOttawa, City Q4-23 Q3-24 Q4-24\nHousing Starts 2,521 2,500 1,770 1500\nSingle 345 301 364\n1000\nSemi 34 28 42\nRow 445 570 671\n500\nApartment 1,697 1,601 693\n0\nOverall, housing starts declined by 29.8% from Q4 2023\nto Q4 2024. While all ground-oriented dwelling types\nsaw year-over-year increases in starts, apartment starts\ndropped by 59.2%, whereas single-detached homes\nincreased by 5.5%, semi-attached homes rose by 23.5%,\nand row-house starts surged by 50.8%.\nOttawa, City YTD-23 YTD-24\nHousing Starts 8,632 6,800\nSingle 1,211 1,104\nSemi 114 108\nRow 1,574 1,911\nApartment 5,733 3,677\nHousing Sales, Resale Market\nSource: Ottawa Real Estate Board\nOttawa Q4-23 Q3-24 Q4-24\nArea*\nAverage $ 642,154 $ 675,167 $ 666,523\nResale Price\nResale Units 2,105 3,388 2,851\nSold\nA total of 2,851 units were sold through t\n\n[Economic Development Update – Q4 2024  (page 1)]\n4.5% 5.7%\nParticipation Rate 69.2% 68.9%\n*2021 boundaries\n4\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nUnemployment Rate\n800\n600\n400\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nLabour Force\nLabour force (x 1,000) Employed (x 1,000)\nEmployed Labour Force by Sectors\nPublic administration\nWholesale and retail trade\nProfessional, scientific and technical services\nHealth care and social assistance\nEducational services\nConstruction\nAccommodation and food services\nFinance, insurance, real estate, rental and leasing\nInformation, culture and recreation\nManufacturing\nTransportation and warehousing\nBusiness, building and other support services\nOther services (except public administration)\nUtilities\nAgriculture\nForestry, fishing, mining, quarrying, oil and gas\n0 20,000 40,000 60,000 80,000 100,000120,000140,000160,000\nQ4 2024 Q3 2024 Q4 2023\nHousing\nHousing Starts\nSource: CMHC Housing Market Information Portal\nOttawa\n\n[Economic Development Update – Q4 2024  (page 1)]\n02.8 714.5 6.0%\nEmployed (x 1,000) 658.1 658.1 670.9 5.0%\n4.0%\nUnemployed (x 1,000) 33.3 44.7 43.6\n3.0%\nUnemployment Rate 4.8% 6.4% 6.1% 2.0%\n1.0%\nParticipation Rate 70.1% 69.1% 69.5%\n0.0%\n*2021 boundaries\nYear-over-year, the overall labour force increased 3.3%\nwhile employed residents increased by 2.0%.\nMeanwhile, the unemployment rate also increased 1.3%\npercentage points from Q4 2023. Other Services (except\nPublic Administration), Health Care and Social\nAssistance, and Transportation and Warehousing saw\nthe largest increases in employment growth year-over-\nyear. Meanwhile, Wholesale and Retail Trade; Education\nServices and Information, Culture and Recreation sectors\nsaw the largest decreases in employment growth over\nthe same period.\nOttawa, CMA (ON pt.)* YTD-23 YTD-24\nUnemployment Rate 4.5% 5.7%\nParticipation Rate 69.2% 68.9%\n*2021 boundaries\n4\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nUnemployment Rate\n800\n600\n400\n32-naJ 32-raM 32-yaM 32-l\n\n[Economic Development Update – Q4 2024  (page 1)]\n,100,000\n1,050,000\n1,000,000\n950,000\nAverage Weekly Earnings\nYTD 2023 YTD 2024\n9102-ceD 0202-luJ 0202-ceD 1202-luJ 1202-ceD 2202-luJ 2202-ceD 3202-luJ 3202-ceD 4202-luJ 4202-ceD\nPopulation\nEconomy\nConstruction Permits, Seasonally Adjusted\nSource: Statistics Canada, Table 34-10-0066-01 5 00,000\n400,000\nOttawa, CMA Q4-23 Q3-24 Q4-24\n(ON pt.)* 3 00,000\nTotal Permits $961,460 $843,679 $1,055,632 2 00,000\nResidential $693,766 $578,239 $782,233 100,000\nNon-residential $267,693 $265,440 $273,399\n0\n(x $1,000) *2006 boundaries\nCompared to Q4 of last year, total construction permit\nvalue increased by 9.8% in Q4 2024, largely due to a 12.8%\nincrease in residential permit value and a 2.1% increase in\nnon-residential permit. Since last quarter, total construction\npermit value increased by 26.6%, where residential permit\nvalue increased by 37.3% and non-residential permit values\nincreased 3.5%.\nOttawa, CMA (ON pt.)* YTD-23 YTD-24\nTotal Permits 3,383,222 3,595,969\nResidential 2,279,361 2,602,989\nNon-\n\n[Economic Development Update – Q4 2024  (page 1)]\nt.)* Q4-23 Q3-24 Q4-24\nConsumer Price Index 160.3 163.9 163.5 160\nInflation 2.7% 2.4% 2.0%\n*2006 boundaries 155\nThe Consumer Price Index saw a year-over-year increase 150\nof 2.0% to 163.5 in Q4 2024. The inflation rate decreased\n0.4 percentage points from the previous quarter and\ndecreased 0.7 percentage points since Q4 of last year.\nAverage Weekly Earning\nSource: CMHC Custom Data\nOttawa, CMA (ON pt.)* Q4-23 Q3-24 Q4-24\nAvg. Weekly Earning $1,405 $1,445 $1,475\n*2021 boundaries\nThe average weekly earning increased 4.9 % year-over-\nyear and decreased 2.1% from the previous quarter to\nreach $1,475 in Q4 2024.\n6\n22-tcO 32-naJ 32-rpA 32-luJ 32-tcO 42-naJ 42-rpA 42-luJ 42-tcO\nConsumer Price Index (2002=100)\n1,500\n1,450\n1,400\n1,350\n1,300\nnaJ beF raM rpA yaM nuJ luJ guA peS tcO voN ceD\n1,150,000\n1,100,000\n1,050,000\n1,000,000\n950,000\nAverage Weekly Earnings\nYTD 2023 YTD 2024\n9102-ceD 0202-luJ 0202-ceD 1202-luJ 1202-ceD 2202-luJ 2202-ceD 3202-luJ 3202-ceD 4202-luJ 4202-ceD\nPopulation\nEconomy\nCon\n\n[Economic Development Update – Q4 2024  (page 1)]\nEconomic Development Update – Q4 2024\nThe City of Ottawa Economic Development Update provides an overview of quarterly and annual\neconomic indicators to the city’s economy. The Q4 2024 update covers the months of October,\nNovember and December 2024. This report will be available on Ottawa.ca and via an email subscription.\nNew and Noteworthy in Q1 2025: January, February and March 2025\n• Bank of Canada Warns of Economic Impact from Prolonged U.S. Trade Conflict: The Bank of\nCanada has expressed concerns that a prolonged trade conflict with the United States could\npermanently reduce Canada's GDP. In response to potential U.S. tariffs, the Bank has reduced its\nkey policy rate to 3%, marking the sixth consecutive reduction. The governing council noted that\nongoing trade tensions may lead to decreased economic activity, higher inflation, and a weakened\nCanadian dollar.\n\n[Economic Development Update – Q4 2024  (page 1)]\ns\nreached $722,400, a 2.1% year-over-year rise, while townhouses saw a modest 0.3% increase to\n$491,500. Conversely, apartment prices experienced a 3.7% decline, with the benchmark price at\n$406,200. OREB attributes the market's recovery to buyers gradually returning, influenced by\nstabilizing interest rates and upcoming changes in mortgage regulations. This trend suggests a\nstrengthening housing market in Ottawa, potentially boosting economic activity and consumer\nconfidence in the region. Source: Ottawa CityNews\n2\nSnapshot\nQ4-2023 Q3-2024 Q4-2024 Year-over-year Status:\nQ4 2024 Compared to\nQ4-2023\nEmployed Labour 658,067 658,133 670,900 ✔\nPositive\nForce\nUnemployment Rate 4.8% 6.4% 6.1% ❌\nNegative\nParticipation Rate 70.1% 69.1% 69.5% ❌\nNegative\nHousing Starts 2,521 2,500 1,770 ❌\nNegative\nAverage Resale Price $642,154 $675,167 $666,523 ❌\nNegative\nResale Units Sold 2,105 3,388 2,851 ✔\nPositive\nPopulation 1,083,550 1,094,340 1,097,760 ✔\nPositive\nInflation 2.7% 2.4% 2.0% ✔\nPositive\nAverage\n\n[Economic Development Update – Q4 2024  (page 1)]\nMarket\nSource: Ottawa Real Estate Board\nOttawa Q4-23 Q3-24 Q4-24\nArea*\nAverage $ 642,154 $ 675,167 $ 666,523\nResale Price\nResale Units 2,105 3,388 2,851\nSold\nA total of 2,851 units were sold through the MLS system\nin Q4 2024, a decrease of 15.9% from the previous\nquarter, however, it increased by 35.4% year-over-year.\nThe average resale price decreased by 1.3% from the\nprevious quarter and increased by 3.8% year-over-year.\nOttawa Area* YTD-23 YTD-24\nAverage Resale Price** $652,248 $672,712\nResale Units Sold 13,250 13,359\n* Includes City of Ottawa and surrounding areas where OREB\nmembers sold properties (i.e. Carleton Place, Kemptville, Clarence-\nRockland, etc.)\n5\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nHousing Starts\nHousing Starts by Type\n2,000\n1,000\n0\nSingle Semi Row Apartment\nQ4 2023 Q4 2024\n2,000\n1,500\n1,000\n500\n0\nnaJ beF raM rpA yaM nuJ luJ guA peS tcO voN ceD\n$750,000\n$700,000\n$650,000\n$600,000\n$550,000\nResale Units Sold\n2023 2024\n32-na\n\n[Economic Development Update – Q4 2024  (page 1)]\nyear-over-year and increased by\n3.8% from the previous quarter to reach 1,089,848 sq.ft\nin Q4 2024.\n8\nNote:\nMost of the indicators are based on two geographic boundaries depending on the source data. The\napplicable geography for each dataset is indicated on the top left corner of each table.\n“Ottawa, City” represents the City of Ottawa;\n“Ottawa CMA (ON pt.)” represents the Ontario portion of the Ottawa-Gatineau Census Metropolitan\nArea. Geographical boundaries vary depending on census year.\n9\n\n[Economic Development Update – Q4 2024  (page 1)]\ny. The initiatives aim\nto strengthen Ottawa's resilience and ensure a secure environment for all residents, contributing\npositively to the city's economic stability and attractiveness for investment. Source: City of Ottawa\n• Rural Summit 2024 Addresses Service Improvements for Ottawa's Rural Communities: The Rural\nSummit 2024, held in October, focused on recommending improvements to city services for\nOttawa's rural residents and communities. A Resident Working Group, formed in January 2024\nwith representatives from each rural ward, organized the summit to address issues specific to\nrural areas, including service delivery, future planning, and community development. The summit\naimed to foster better communication between rural stakeholders and city officials, ensuring that\nthe unique needs of these communities are met.",
+    "timestamp": "2025-12-01T08:33:06.523194+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "c3ef9159-187c-4dc1-b51c-5c8c60c8a422",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "In the 'Economic Development Update – Q4 2024' snapshot, what was Ottawa’s unemployment rate in Q4 2024? Please answer with the exact percentage reported in the document.",
+    "timestamp": "2025-12-01T08:33:29.618201+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "6a29da72-d139-4029-b839-93cd19e669d3",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot, Ottawa's unemployment rate in Q4 2024 was 6.1%.\n\n---\nOriginal excerpts used:\n\n[Economic Development Update – Q4 2024  (page 1)]\nrate to 3%, marking the sixth consecutive reduction. The governing council noted that\nongoing trade tensions may lead to decreased economic activity, higher inflation, and a weakened\nCanadian dollar. Some Canadian businesses are considering relocating to the U.S., which could\nexacerbate capital flight and harm competitiveness. The Bank will continue to monitor the\nsituation closely, especially regarding supply chains and sectoral impacts. Source: Reuters\n• Ottawa's Economy Shows Resilience Amidst U.S. Tariffs: Despite the imposition of a 25% tariff\non all Canadian imports by the U.S. on February 1, 2025, Ottawa's economy is expected to remain\nresilient. Factors contributing to this outlook include declining interest rates and ongoing\ninfrastructure projects, such as the Light Rail Transit (LRT) expansion. These elements are\nanticipated to mitigate potential negative impacts, supporting continued economic growth in the\nregion.\n\n[Economic Development Update – Q4 2024  (page 1)]\ning\ninfrastructure projects, such as the Light Rail Transit (LRT) expansion. These elements are\nanticipated to mitigate potential negative impacts, supporting continued economic growth in the\nregion. Source: Ottawa Business Journal\n• Launch of Downtown Vibrancy Office to Revitalize Ottawa's Core: At the start of 2025, Ottawa\nintroduced a new \"downtown vibrancy office\" aimed at rejuvenating the city's core. Supported\nby a $450,000 grant from the provincial government's $20-million \"New Deal\" for Ottawa, the\noffice focuses on initiatives to attract businesses, residents, and visitors to the downtown area.\nEfforts include enhancing public spaces, supporting local events, and collaborating with\nstakeholders to address challenges such as commercial vacancies. This initiative seeks to stimulate\neconomic activity, foster a vibrant urban environment, and reinforce Ottawa's position as a\ndynamic capital city.\n\n[Economic Development Update – Q4 2024  (page 1)]\nfuture planning, and community development. The summit\naimed to foster better communication between rural stakeholders and city officials, ensuring that\nthe unique needs of these communities are met. Enhancing services in rural Ottawa is expected\nto support local economies, particularly in agriculture and small businesses, contributing to the\noverall economic health of the region. Source: City of Ottawa\n• Ottawa Senators Secure Agreement for New Arena at LeBreton Flats: The Ottawa Senators, in\npartnership with the National Capital Commission (NCC), have reached an agreement to construct\na new arena in the LeBreton Flats district. This development is part of a broader mixed-use project\naimed at revitalizing the area. The new arena is expected to boost local employment during and\nafter construction, stimulate investment, and enhance Ottawa's appeal as a destination for major\nevents and entertainment.\n\n[Economic Development Update – Q4 2024  (page 1)]\non, which\n1\nbegan operations on January 6, 2025, is expected to improve public transportation options,\nreduce traffic congestion, and support economic growth in the region by facilitating easier\nmovement for residents and visitors alike. Source: OC-Transpo\nWhat Happened in Q4 2024: October, November and December 2024\n• Ontario-Ottawa Agreement Secures $48 Million for Public Safety Initiatives: The Ontario\nSolicitor General and Treasury Board have endorsed seven public safety initiatives under the\nOntario-Ottawa Agreement, allocating $48 million over three years to enhance community safety.\nThis funding supports evidence-based approaches and contemporary best practices, focusing on\ncommunity engagement and partnerships to address safety issues holistically. The initiatives aim\nto strengthen Ottawa's resilience and ensure a secure environment for all residents, contributing\npositively to the city's economic stability and attractiveness for investment.\n\n[Economic Development Update – Q4 2024  (page 1)]\ning the area. The new arena is expected to boost local employment during and\nafter construction, stimulate investment, and enhance Ottawa's appeal as a destination for major\nevents and entertainment. The project underscores the city's commitment to urban renewal and\neconomic diversification. Source: CTV News\n• Ottawa's Real Estate Market Sees Increase in Listings and Sales in 2024: The Ottawa Real Estate\nBoard (OREB) reported a notable rise in active residential listings and home sales throughout\n2024. As of November 30, there were 4,036 active residential listings, marking a 38.2% increase\ncompared to the same period in 2023. Home sales in November 2024 totaled 1,059 units,\nreflecting an 11.8% increase from November 2023. The benchmark price for single-family homes\nreached $722,400, a 2.1% year-over-year rise, while townhouses saw a modest 0.3% increase to\n$491,500. Conversely, apartment prices experienced a 3.7% decline, with the benchmark price at\n$406,200.\n\n[Economic Development Update – Q4 2024  (page 1)]\n1,000\n0\nSingle Semi Row Apartment\nQ4 2023 Q4 2024\n2,000\n1,500\n1,000\n500\n0\nnaJ beF raM rpA yaM nuJ luJ guA peS tcO voN ceD\n$750,000\n$700,000\n$650,000\n$600,000\n$550,000\nResale Units Sold\n2023 2024\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nAverage Resale Price\nLiving\nPopulation\nSource: City of Ottawa estimate*\nOttawa, Q4-23 Q2-24 Q4-24\nCity\nPopulation 1,083,550 1,094,340 1,097,760\n*Population estimate reported twice per year\nThe population estimate for the city of Ottawa increased\n1.3% year-over-year to reach 1,097,760 at end of year\n2024.\nConsumer Price Index (2002=100)\nSource: Statistics Canada, Table 18-10-0004-01\n165\nOttawa, CMA (ON pt.)* Q4-23 Q3-24 Q4-24\nConsumer Price Index 160.3 163.9 163.5 160\nInflation 2.7% 2.4% 2.0%\n*2006 boundaries 155\nThe Consumer Price Index saw a year-over-year increase 150\nof 2.0% to 163.5 in Q4 2024.\n\n[Economic Development Update – Q4 2024  (page 1)]\nand increased 1.0 percentage\n4.0%\npoints from the last quarter to reach 5.4% in Q4 2024.\nOttawa, City Q4-23 Q3-24 Q4-24\n3.0%\nRetail Vacancy Rate 2.0% 2.1% 2.2%\nIn Q4, 2024, the retail vacancy rate has increased in 0.1 2.0%\npercentage points to 2.2% from the previous quarter\n(Q3 2024) at 2.1%, as well 0.2 percentage points from\nQ4 of last year. 1.0%\nRetail Vacancy by Square Footage\n0.0%\nSource: Marcus & Millichap for Retail Market Reports\nRetail Industrial\nOttawa, City Q4-23 Q3-24 Q4-24 Q4 2023 Q4 2024\nRentable 49,301,741 49,347,169 49,357,703\nBuilding Area\nVacant (sq ft) 999,857 1,050,169 1,089,848\nRentable Building Area (RBA), for retail uses increased\nby 55,962 sq. ft year-over-year and 10,534 sq. ft when\ncompared to the previous quarter. The retail vacancy\narea increased 9.0% year-over-year and increased by\n3.8% from the previous quarter to reach 1,089,848 sq.ft\nin Q4 2024.\n8\nNote:\nMost of the indicators are based on two geographic boundaries depending on the source data.\n\n[Economic Development Update – Q4 2024  (page 1)]\no address challenges such as commercial vacancies. This initiative seeks to stimulate\neconomic activity, foster a vibrant urban environment, and reinforce Ottawa's position as a\ndynamic capital city. Source: Ottawa Business Journal\n• Ottawa's Trillium Line Expansion Enhances Transit Connectivity: The Trillium Line, part of\nOttawa's O-Train light rail system, has undergone a significant expansion as part of the Stage 2\nLight Rail Transit (LRT) project. The extension adds 11 kilometers of new track, extending the line\nsouth from Greenboro to Limebank, with new stations at South Keys, Leitrim, Bowesville, and\nLimebank. Additionally, a 4-kilometer branch line now connects South Keys station to Macdonald-\nCartier International Airport, enhancing transit accessibility for travelers. This expansion, which\n1\nbegan operations on January 6, 2025, is expected to improve public transportation options,\nreduce traffic congestion, and support economic growth in the region by facilitating easier\nmovem\n\n[Economic Development Update – Q4 2024  (page 1)]\nrates year-over-year, while\n0.0%\noffice class B experienced a decrease of 0.3 percentage\nAll Office Class A Class B Class C\npoints and office class C experienced a decrease of 1.8\npercentage points. Q4 2023 Q4 2024\n7\n22-tcO 32-naJ 32-rpA 32-luJ 32-tcO 42-naJ 42-rpA 42-luJ 42-tcO\nConstruction Permits (x $1,000)\n400,000\n300,000\n200,000\n100,000\n0\n22-tcO 32-naJ 32-rpA 32-luJ 32-tcO 42-naJ 42-rpA 42-luJ 42-tcO\nConstruction Permits (x $1,000)\nResidential Non-residential\nEconomy\nIndustrial and Retail Vacancy Rates\nSource: Cushman & Wakefield for Industrial Reports, and Marcus &\nIndustrial and Retail Vacancy Rates\nMillichap for Retail Market Reports\n6.0%\nOttawa, City Q4-23 Q3-24 Q4-24\nInd. Vacancy Rate 2.8% 4.4% 5.4%\n5.0%\nThe industrial vacancy rate increased 2.6 percentage\npoints year-over-year and increased 1.0 percentage\n4.0%\npoints from the last quarter to reach 5.4% in Q4 2024.\nOttawa, City Q4-23 Q3-24 Q4-24\n3.0%\nRetail Vacancy Rate 2.0% 2.1% 2.2%\nIn Q4, 2024, the retail vacancy rate has\n\n[Economic Development Update – Q4 2024  (page 1)]\nverage Resale Price $642,154 $675,167 $666,523 ❌\nNegative\nResale Units Sold 2,105 3,388 2,851 ✔\nPositive\nPopulation 1,083,550 1,094,340 1,097,760 ✔\nPositive\nInflation 2.7% 2.4% 2.0% ✔\nPositive\nAverage Weekly $1,405 $1,445 $1,475 ✔\nPositive\nEarning\nConstruction Permit $961,460 $843,000 $1,055,632 ✔\nPositive\nValue\n(seasonally adjusted)\nOffice Vacancy Rate 12.2% 11.5% 11.6% ✔\nPositive\nRetail Vacancy Rate 2.0% 2.1% 2.2% ❌\nNegative\nIndustrial Vacancy 2.8% 4.4% 5.4% ❌\nNegative\nRate\nPlease refer to individual tables below for more details.\n*Population data is available bi-annually for quarters Q2 and Q4.\n3\nLabour Force\nLabour Force, Seasonally Adjusted, 3-Month\nMoving Average\nSource: Statistics Canada, Table 14-10-0380-01\nOttawa, CMA (ON pt.)* Q4-24 Q3-24 Q4-24\n7.0%\nLabour Force (x 1,000) 691.4 702.8 714.5 6.0%\nEmployed (x 1,000) 658.1 658.1 670.9 5.0%\n4.0%\nUnemployed (x 1,000) 33.3 44.7 43.6\n3.0%\nUnemployment Rate 4.8% 6.4% 6.1% 2.0%\n1.0%\nParticipation Rate 70.1% 69.1% 69.5%\n0.0%\n*2021 bound\n\n[Economic Development Update – Q4 2024  (page 1)]\nfishing, mining, quarrying, oil and gas\n0 20,000 40,000 60,000 80,000 100,000120,000140,000160,000\nQ4 2024 Q3 2024 Q4 2023\nHousing\nHousing Starts\nSource: CMHC Housing Market Information Portal\nOttawa, City Q4-23 Q3-24 Q4-24\nHousing Starts 2,521 2,500 1,770 1500\nSingle 345 301 364\n1000\nSemi 34 28 42\nRow 445 570 671\n500\nApartment 1,697 1,601 693\n0\nOverall, housing starts declined by 29.8% from Q4 2023\nto Q4 2024. While all ground-oriented dwelling types\nsaw year-over-year increases in starts, apartment starts\ndropped by 59.2%, whereas single-detached homes\nincreased by 5.5%, semi-attached homes rose by 23.5%,\nand row-house starts surged by 50.8%.\nOttawa, City YTD-23 YTD-24\nHousing Starts 8,632 6,800\nSingle 1,211 1,104\nSemi 114 108\nRow 1,574 1,911\nApartment 5,733 3,677\nHousing Sales, Resale Market\nSource: Ottawa Real Estate Board\nOttawa Q4-23 Q3-24 Q4-24\nArea*\nAverage $ 642,154 $ 675,167 $ 666,523\nResale Price\nResale Units 2,105 3,388 2,851\nSold\nA total of 2,851 units were sold through t\n\n[Economic Development Update – Q4 2024  (page 1)]\n4.5% 5.7%\nParticipation Rate 69.2% 68.9%\n*2021 boundaries\n4\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nUnemployment Rate\n800\n600\n400\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nLabour Force\nLabour force (x 1,000) Employed (x 1,000)\nEmployed Labour Force by Sectors\nPublic administration\nWholesale and retail trade\nProfessional, scientific and technical services\nHealth care and social assistance\nEducational services\nConstruction\nAccommodation and food services\nFinance, insurance, real estate, rental and leasing\nInformation, culture and recreation\nManufacturing\nTransportation and warehousing\nBusiness, building and other support services\nOther services (except public administration)\nUtilities\nAgriculture\nForestry, fishing, mining, quarrying, oil and gas\n0 20,000 40,000 60,000 80,000 100,000120,000140,000160,000\nQ4 2024 Q3 2024 Q4 2023\nHousing\nHousing Starts\nSource: CMHC Housing Market Information Portal\nOttawa\n\n[Economic Development Update – Q4 2024  (page 1)]\n02.8 714.5 6.0%\nEmployed (x 1,000) 658.1 658.1 670.9 5.0%\n4.0%\nUnemployed (x 1,000) 33.3 44.7 43.6\n3.0%\nUnemployment Rate 4.8% 6.4% 6.1% 2.0%\n1.0%\nParticipation Rate 70.1% 69.1% 69.5%\n0.0%\n*2021 boundaries\nYear-over-year, the overall labour force increased 3.3%\nwhile employed residents increased by 2.0%.\nMeanwhile, the unemployment rate also increased 1.3%\npercentage points from Q4 2023. Other Services (except\nPublic Administration), Health Care and Social\nAssistance, and Transportation and Warehousing saw\nthe largest increases in employment growth year-over-\nyear. Meanwhile, Wholesale and Retail Trade; Education\nServices and Information, Culture and Recreation sectors\nsaw the largest decreases in employment growth over\nthe same period.\nOttawa, CMA (ON pt.)* YTD-23 YTD-24\nUnemployment Rate 4.5% 5.7%\nParticipation Rate 69.2% 68.9%\n*2021 boundaries\n4\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nUnemployment Rate\n800\n600\n400\n32-naJ 32-raM 32-yaM 32-l\n\n[Economic Development Update – Q4 2024  (page 1)]\n,100,000\n1,050,000\n1,000,000\n950,000\nAverage Weekly Earnings\nYTD 2023 YTD 2024\n9102-ceD 0202-luJ 0202-ceD 1202-luJ 1202-ceD 2202-luJ 2202-ceD 3202-luJ 3202-ceD 4202-luJ 4202-ceD\nPopulation\nEconomy\nConstruction Permits, Seasonally Adjusted\nSource: Statistics Canada, Table 34-10-0066-01 5 00,000\n400,000\nOttawa, CMA Q4-23 Q3-24 Q4-24\n(ON pt.)* 3 00,000\nTotal Permits $961,460 $843,679 $1,055,632 2 00,000\nResidential $693,766 $578,239 $782,233 100,000\nNon-residential $267,693 $265,440 $273,399\n0\n(x $1,000) *2006 boundaries\nCompared to Q4 of last year, total construction permit\nvalue increased by 9.8% in Q4 2024, largely due to a 12.8%\nincrease in residential permit value and a 2.1% increase in\nnon-residential permit. Since last quarter, total construction\npermit value increased by 26.6%, where residential permit\nvalue increased by 37.3% and non-residential permit values\nincreased 3.5%.\nOttawa, CMA (ON pt.)* YTD-23 YTD-24\nTotal Permits 3,383,222 3,595,969\nResidential 2,279,361 2,602,989\nNon-\n\n[Economic Development Update – Q4 2024  (page 1)]\nt.)* Q4-23 Q3-24 Q4-24\nConsumer Price Index 160.3 163.9 163.5 160\nInflation 2.7% 2.4% 2.0%\n*2006 boundaries 155\nThe Consumer Price Index saw a year-over-year increase 150\nof 2.0% to 163.5 in Q4 2024. The inflation rate decreased\n0.4 percentage points from the previous quarter and\ndecreased 0.7 percentage points since Q4 of last year.\nAverage Weekly Earning\nSource: CMHC Custom Data\nOttawa, CMA (ON pt.)* Q4-23 Q3-24 Q4-24\nAvg. Weekly Earning $1,405 $1,445 $1,475\n*2021 boundaries\nThe average weekly earning increased 4.9 % year-over-\nyear and decreased 2.1% from the previous quarter to\nreach $1,475 in Q4 2024.\n6\n22-tcO 32-naJ 32-rpA 32-luJ 32-tcO 42-naJ 42-rpA 42-luJ 42-tcO\nConsumer Price Index (2002=100)\n1,500\n1,450\n1,400\n1,350\n1,300\nnaJ beF raM rpA yaM nuJ luJ guA peS tcO voN ceD\n1,150,000\n1,100,000\n1,050,000\n1,000,000\n950,000\nAverage Weekly Earnings\nYTD 2023 YTD 2024\n9102-ceD 0202-luJ 0202-ceD 1202-luJ 1202-ceD 2202-luJ 2202-ceD 3202-luJ 3202-ceD 4202-luJ 4202-ceD\nPopulation\nEconomy\nCon\n\n[Economic Development Update – Q4 2024  (page 1)]\nEconomic Development Update – Q4 2024\nThe City of Ottawa Economic Development Update provides an overview of quarterly and annual\neconomic indicators to the city’s economy. The Q4 2024 update covers the months of October,\nNovember and December 2024. This report will be available on Ottawa.ca and via an email subscription.\nNew and Noteworthy in Q1 2025: January, February and March 2025\n• Bank of Canada Warns of Economic Impact from Prolonged U.S. Trade Conflict: The Bank of\nCanada has expressed concerns that a prolonged trade conflict with the United States could\npermanently reduce Canada's GDP. In response to potential U.S. tariffs, the Bank has reduced its\nkey policy rate to 3%, marking the sixth consecutive reduction. The governing council noted that\nongoing trade tensions may lead to decreased economic activity, higher inflation, and a weakened\nCanadian dollar.\n\n[Economic Development Update – Q4 2024  (page 1)]\ns\nreached $722,400, a 2.1% year-over-year rise, while townhouses saw a modest 0.3% increase to\n$491,500. Conversely, apartment prices experienced a 3.7% decline, with the benchmark price at\n$406,200. OREB attributes the market's recovery to buyers gradually returning, influenced by\nstabilizing interest rates and upcoming changes in mortgage regulations. This trend suggests a\nstrengthening housing market in Ottawa, potentially boosting economic activity and consumer\nconfidence in the region. Source: Ottawa CityNews\n2\nSnapshot\nQ4-2023 Q3-2024 Q4-2024 Year-over-year Status:\nQ4 2024 Compared to\nQ4-2023\nEmployed Labour 658,067 658,133 670,900 ✔\nPositive\nForce\nUnemployment Rate 4.8% 6.4% 6.1% ❌\nNegative\nParticipation Rate 70.1% 69.1% 69.5% ❌\nNegative\nHousing Starts 2,521 2,500 1,770 ❌\nNegative\nAverage Resale Price $642,154 $675,167 $666,523 ❌\nNegative\nResale Units Sold 2,105 3,388 2,851 ✔\nPositive\nPopulation 1,083,550 1,094,340 1,097,760 ✔\nPositive\nInflation 2.7% 2.4% 2.0% ✔\nPositive\nAverage\n\n[Economic Development Update – Q4 2024  (page 1)]\nMarket\nSource: Ottawa Real Estate Board\nOttawa Q4-23 Q3-24 Q4-24\nArea*\nAverage $ 642,154 $ 675,167 $ 666,523\nResale Price\nResale Units 2,105 3,388 2,851\nSold\nA total of 2,851 units were sold through the MLS system\nin Q4 2024, a decrease of 15.9% from the previous\nquarter, however, it increased by 35.4% year-over-year.\nThe average resale price decreased by 1.3% from the\nprevious quarter and increased by 3.8% year-over-year.\nOttawa Area* YTD-23 YTD-24\nAverage Resale Price** $652,248 $672,712\nResale Units Sold 13,250 13,359\n* Includes City of Ottawa and surrounding areas where OREB\nmembers sold properties (i.e. Carleton Place, Kemptville, Clarence-\nRockland, etc.)\n5\n32-naJ 32-raM 32-yaM 32-luJ 32-peS 32-voN 42-naJ 42-raM 42-yaM 42-luJ 42-peS 42-voN\nHousing Starts\nHousing Starts by Type\n2,000\n1,000\n0\nSingle Semi Row Apartment\nQ4 2023 Q4 2024\n2,000\n1,500\n1,000\n500\n0\nnaJ beF raM rpA yaM nuJ luJ guA peS tcO voN ceD\n$750,000\n$700,000\n$650,000\n$600,000\n$550,000\nResale Units Sold\n2023 2024\n32-na\n\n[Economic Development Update – Q4 2024  (page 1)]\nyear-over-year and increased by\n3.8% from the previous quarter to reach 1,089,848 sq.ft\nin Q4 2024.\n8\nNote:\nMost of the indicators are based on two geographic boundaries depending on the source data. The\napplicable geography for each dataset is indicated on the top left corner of each table.\n“Ottawa, City” represents the City of Ottawa;\n“Ottawa CMA (ON pt.)” represents the Ontario portion of the Ottawa-Gatineau Census Metropolitan\nArea. Geographical boundaries vary depending on census year.\n9\n\n[Economic Development Update – Q4 2024  (page 1)]\ny. The initiatives aim\nto strengthen Ottawa's resilience and ensure a secure environment for all residents, contributing\npositively to the city's economic stability and attractiveness for investment. Source: City of Ottawa\n• Rural Summit 2024 Addresses Service Improvements for Ottawa's Rural Communities: The Rural\nSummit 2024, held in October, focused on recommending improvements to city services for\nOttawa's rural residents and communities. A Resident Working Group, formed in January 2024\nwith representatives from each rural ward, organized the summit to address issues specific to\nrural areas, including service delivery, future planning, and community development. The summit\naimed to foster better communication between rural stakeholders and city officials, ensuring that\nthe unique needs of these communities are met.",
+    "timestamp": "2025-12-01T08:33:29.621204+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
   }
 ]

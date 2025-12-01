@@ -18,6 +18,7 @@ from app.models.chat import Conversation, Message
 from app.repositories.chat_repository import (ConversationRepository,
                                               MessageRepository)
 from app.services.ai_providers import GeminiService, GroqService
+from app.services.document_service import DocumentService
 
 logger = logging.getLogger(__name__)
 
@@ -32,6 +33,7 @@ class ChatService:
         self.settings = settings
         self.conversation_repository = ConversationRepository()
         self.message_repository = MessageRepository()
+        self.document_service = DocumentService(settings)
         
         # Initialize free AI services
         self.groq_service = GroqService(settings)
@@ -70,14 +72,97 @@ class ChatService:
         Returns:
             Dict containing AI response and metadata
         """
+        # Store document excerpts for citation in the response
+        display_snippets: list[str] = []
+
         try:
-            # Try each AI service in priority order
+            # Try document search
+            rag_results: list[dict[str, Any]] = []
+            try:
+                rag_results = await self.document_service.search_documents(
+                    query=message,
+                    limit=20,
+                    similarity_threshold=0.0,
+                )
+            except Exception as rag_error:
+                logger.warning(f"RAG search failed, using LLM only: {rag_error}")
+                rag_results = []
+
+            # If search results are found, construct the context and sources.
+            sources: list[str] = []
+            model_input: str
+
+            if rag_results:
+                context_parts: list[str] = []
+
+                for item in rag_results:
+                    filename = (
+                        item.get("title")
+                        or item.get("filename")
+                        or item.get("doc_id")
+                        or "Document"
+                    )
+                    page_number = item.get("page_number") or 1
+                    chunk_text = (item.get("chunk_text") or "").strip()
+                    if not chunk_text:
+                        continue
+
+                    label = f"{filename} (page {page_number})"
+                    sources.append(label)
+                    snippet = f"[{label}]\n{chunk_text}"
+                    context_parts.append(snippet)
+                    display_snippets.append(snippet)
+
+                if context_parts:
+                    context_text = "\n\n".join(context_parts)
+
+                    # prevent prompts from being too long    
+                    max_chars = 20000
+                    if len(context_text) > max_chars:
+                        context_text = context_text[:max_chars]
+
+                    # Combine the document content and the original question into a message and send
+                    model_input = (
+                            "Use the following internal document excerpts as context. "
+                            "If they are relevant, base your answer on them. "
+                            "If they do not contain the answer, answer normally.\n\n"
+                            f"{context_text}\n\n"
+                            f"User question: {message}"
+                    )
+                else: 
+                    # empty text
+                    model_input = message
+                    sources = []
+            else:
+                # No document hits
+                model_input = message
+
+            # Original logic
             for service_name, service in self.ai_services:
                 if service.is_available:
                     try:
                         logger.info(f"🤖 Trying {service_name} AI service...")
-                        response = await service.generate_response(message, language)
+                        response = await service.generate_response(model_input, language)
                         
+                        # If documentation was used, include the source in the response for API/frontend use.
+                        if sources:
+                            existing_sources = response.get("sources") or []
+                            # Remove duplicates and maintain order
+                            merged_sources = list(
+                                dict.fromkeys(existing_sources + sources)
+                            )
+                            response["sources"] = merged_sources
+                        
+                        # Attach original document excerpts for citations
+                        if display_snippets:
+                            existing_charts = response.get("charts") or {}
+                            if not isinstance(existing_charts, dict):
+                                existing_charts = {}
+                            existing_charts["citations"] = display_snippets
+                            response["charts"] = existing_charts
+                            #citations_text = "\n\n---\nOriginal excerpts used:\n\n" + "\n\n".join(display_snippets)
+                            #response["text"] = (response.get("text") or "").rstrip() + citations_text
+
                         # Save conversation if IDs provided
                         if conversation_id and user_id:
                             await self._save_conversation(
@@ -93,11 +178,21 @@ class ChatService:
             
             # If all AI services fail, use fallback
             logger.warning("⚠️ All AI services failed, using mock response")
-            return await self._get_fallback_response(message, language)
+            fallback = await self._get_fallback_response(message, language)
+            if sources:
+                fallback["sources"] = sources
+            if display_snippets:
+                existing_charts = fallback.get("charts") or {}
+                if not isinstance(existing_charts, dict):
+                    existing_charts = {}
+                existing_charts["citations"] = display_snippets
+                fallback["charts"] = existing_charts
+            return fallback
             
         except Exception as e:
             logger.error(f"❌ Chat service error: {e}")
-            return await self._get_fallback_response(message, language)
+            fallback = await self._get_fallback_response(message, language)
+            return fallback
     
     async def _get_fallback_response(self, message: str, language: str) -> Dict[str, Any]:
         """
