@@ -847,5 +847,155 @@
       ],
       "confidence": null
     }
+  },
+  {
+    "id": "d13ebe4a-451b-4d67-af4f-290a0f19cc0d",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T19:30:43.283562+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "ecdfaf48-6bb0-4355-aa9f-3b8d64ea2850",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "Thank you for your question about Ottawa's economic development. Based on our local data, I can provide detailed analysis. What specific information would you like to know about business opportunities, investment climate, or economic programs?",
+    "timestamp": "2025-12-01T19:30:43.283562+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "c98a91ca-a420-4c24-b30e-5043ed371fb7",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T19:32:26.879076+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "04e0363e-eb35-45f3-8e4d-8661331e9e24",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "Thank you for your question about Ottawa's economic development. Based on our local data, I can provide detailed analysis. What specific information would you like to know about business opportunities, investment climate, or economic programs?",
+    "timestamp": "2025-12-01T19:32:26.885031+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)",
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "b638b85c-a4dd-41ec-8895-fc88dc109607",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the retail vacancy table in the 'Economic Development Update – Q4 2024', what was the retail vacancy area in Q4 2024 in square feet, and how did it change year-over-year and quarter-over-quarter?",
+    "timestamp": "2025-12-01T19:35:13.760464+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "2595b23c-16b7-4b51-ba74-0fb111cc7796",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "According to the 'Economic Development Update – Q4 2024', the retail vacancy area in Q4 2024 was 1,089,848 square feet. \n\nYear-over-year, the retail vacancy area increased by 9.0% from Q4 2023. \nQuarter-over-quarter, the retail vacancy area increased by 3.8% from Q3 2024.",
+    "timestamp": "2025-12-01T19:35:13.766527+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
+  },
+  {
+    "id": "b4530580-62df-4230-a168-6b2647221585",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "user",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot in the uploaded documents, what was the population of Ottawa in Q4 2024? Please answer with the exact number.",
+    "timestamp": "2025-12-01T19:35:18.730302+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "704cd890-c9d1-4b08-b0fd-5796c8636fab",
+    "conversation_id": "2fdaba12-9c16-4142-a81d-ed425d94d85b",
+    "role": "assistant",
+    "content": "According to the 'Economic Development Update – Q4 2024' snapshot, the population of Ottawa in Q4 2024 was 1,097,760.",
+    "timestamp": "2025-12-01T19:35:18.736373+00:00",
+    "metadata": {
+      "language": null,
+      "intent": null,
+      "sources": [
+        "Economic Development Update – Q4 2024  (page 1)"
+      ],
+      "confidence": null
+    }
   }
 ]

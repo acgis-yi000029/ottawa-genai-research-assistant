@@ -8,8 +8,8 @@ const LoginPage: React.FC = () => {
   const { login, googleLogin, isLoading, error } = useAuth();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    email: '402707192@qq.com',
-    password: 'demo123',
+    email: '',
+    password: '',
   });
   const [formError, setFormError] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState(false);
