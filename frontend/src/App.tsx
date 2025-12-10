@@ -5,7 +5,6 @@ import './App.css';
 import { GOOGLE_CLIENT_ID } from './config/googleAuth';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 
-// 导入页面组件
 import Navbar from './components/Navbar';
 import ChatPage from './pages/ChatPage';
 import DocumentUploadPage from './pages/DocumentUploadPage';
@@ -15,7 +14,6 @@ import RegisterPage from './pages/RegisterPage';
 import ReportPage from './pages/ReportPage';
 import SettingsPage from './pages/SettingsPage';
 
-// 路由保护组件
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isAuthenticated, isLoading } = useAuth();
   
@@ -31,7 +29,6 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
   return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />;
 };
 
-// 语言上下文
 interface LanguageContextType {
   language: 'en' | 'fr';
   setLanguage: (lang: 'en' | 'fr') => void;
@@ -48,7 +45,6 @@ export const useLanguage = () => {
   return context;
 };
 
-// 翻译对象
 const translations = {
   en: {
     // Navigation

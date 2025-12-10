@@ -22,7 +22,7 @@ class Document(BaseModel):
     """Document model."""
 
     id: str
-    user_id: str  # 添加用户ID字段
+    user_id: str  
     filename: str
     title: str
     description: str
@@ -36,9 +36,9 @@ class Document(BaseModel):
     )
     language: str = Field(default="en", pattern="^(en|fr)$")
     tags: list[str] = Field(default_factory=list)
-    content: str = Field(default="")  # 文档内容
-    chunks: list[str] = Field(default_factory=list)  # 文档块列表
-    vector_id: str | None = Field(default=None)  # 向量ID
+    content: str = Field(default="")  
+    chunks: list[str] = Field(default_factory=list)  
+    vector_id: str | None = Field(default=None)  
     metadata: DocumentMetadata = Field(default_factory=DocumentMetadata)
 
 

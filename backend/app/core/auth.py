@@ -1,5 +1,5 @@
 """
-🔐 Authentication Utilities
+Authentication Utilities
 
 JWT token handling and password hashing utilities.
 """

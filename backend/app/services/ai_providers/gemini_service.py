@@ -33,12 +33,12 @@ class GeminiService:
                 genai.configure(api_key=self.api_key)
                 self.model = genai.GenerativeModel('gemini-1.5-flash')
                 self.is_available = True
-                logger.info("✅ Google Gemini AI service initialized successfully")
+                logger.info("Google Gemini AI service initialized successfully")
             except Exception as e:
-                logger.warning(f"⚠️ Failed to initialize Gemini: {e}")
+                logger.warning(f"Failed to initialize Gemini: {e}")
                 self.is_available = False
         else:
-            logger.warning("⚠️ GEMINI_API_KEY not found in environment variables")
+            logger.warning("GEMINI_API_KEY not found in environment variables")
     
     async def generate_response(self, message: str, language: str = "en") -> Dict[str, Any]:
         """
@@ -58,8 +58,7 @@ class GeminiService:
             # Prepare language-specific prompt
             language_prompts = {
                 "en": "You are a helpful AI assistant specialized in Ottawa economic development and business research. Please provide detailed, accurate information.",
-                "fr": "Vous êtes un assistant IA spécialisé dans le développement économique et la recherche commerciale d'Ottawa. Veuillez fournir des informations détaillées et précises.",
-                "zh": "您是专门从事渥太华经济发展和商业研究的AI助手。请提供详细、准确的信息。"
+                "fr": "Vous êtes un assistant IA spécialisé dans le développement économique et la recherche commerciale d'Ottawa. Veuillez fournir des informations détaillées et précises."
             }
             
             system_prompt = language_prompts.get(language, language_prompts["en"])
@@ -78,7 +77,7 @@ class GeminiService:
             }
             
         except Exception as e:
-            logger.error(f"❌ Gemini API error: {e}")
+            logger.error(f"Gemini API error: {e}")
             raise Exception(f"Gemini service error: {str(e)}")
     
     def get_status(self) -> Dict[str, Any]:

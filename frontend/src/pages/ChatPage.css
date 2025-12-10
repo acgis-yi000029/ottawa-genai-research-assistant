@@ -1,4 +1,4 @@
-/* ChatPage.css - GPT风格的现代简洁设计 */
+
 
 .chat-page {
   height: 100vh;
@@ -18,7 +18,6 @@
   position: relative;
 }
 
-/* 移除header，采用GPT的无header设计 */
 
 .chat-messages {
   flex: 1;
@@ -49,7 +48,6 @@
   align-items: flex-start;
 }
 
-/* GPT风格的消息气泡 */
 .message-content {
   max-width: 70%;
   min-width: 100px;
@@ -82,7 +80,6 @@
   border: 1px solid #e5e5e5;
 }
 
-/* Markdown样式优化 */
 .message-text h1,
 .message-text h2,
 .message-text h3 {
@@ -159,12 +156,10 @@
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* 移除头像，采用GPT的纯文本设计 */
 .message-avatar {
   display: none;
 }
 
-/* 简化操作按钮 */
 .message-actions {
   display: flex;
   gap: 0.5rem;
@@ -197,7 +192,6 @@
   color: #333;
 }
 
-/* 图表样式保持简洁 */
 .message-chart {
   background: #fff;
   border: 1px solid #e5e5e5;
@@ -237,7 +231,6 @@
   border-color: #d0d0d0;
 }
 
-/* GPT风格的输入加载指示器 */
 .typing-indicator {
   display: flex;
   gap: 4px;
@@ -276,7 +269,6 @@
   }
 }
 
-/* GPT风格的输入区域 */
 .chat-input-container {
   border-top: 1px solid #e5e5e5;
   padding: 1rem 2rem 2rem 2rem;
@@ -330,7 +322,6 @@
   cursor: not-allowed;
 }
 
-/* GPT风格的发送按钮 */
 .send-button {
   background: #1a1a1a;
   color: white;
@@ -359,7 +350,6 @@
   cursor: not-allowed;
 }
 
-/* 响应式设计 */
 @media (max-width: 768px) {
   .chat-messages {
     padding: 1rem;
@@ -384,7 +374,7 @@
   }
 
   .chat-input textarea {
-    font-size: 16px; /* 防止iOS缩放 */
+    font-size: 16px;
     padding: 14px 44px 14px 18px;
   }
 
@@ -396,7 +386,6 @@
   }
 }
 
-/* 可访问性 */
 .chat-input textarea:focus,
 .send-button:focus,
 .action-btn:focus,
@@ -404,7 +393,6 @@
   outline: none;
 }
 
-/* 高对比度模式 */
 @media (prefers-contrast: high) {
   .message-text {
     border: 2px solid #000;
@@ -416,7 +404,6 @@
   }
 }
 
-/* 减少动画 */
 @media (prefers-reduced-motion: reduce) {
   .typing-indicator span {
     animation: none;
@@ -431,7 +418,6 @@
   }
 }
 
-/* 滚动条样式 */
 .chat-messages::-webkit-scrollbar {
   width: 6px;
 }
@@ -449,7 +435,6 @@
   background: #9ca3af;
 }
 
-/* 选择文本样式 */
 .message-text ::selection {
   background: #10a37f;
   color: white;

@@ -1,4 +1,3 @@
-/* LoginPage.css - 现代化Ottawa Government官方风格 */
 
 .login-page {
   min-height: 100vh;
@@ -11,7 +10,6 @@
   overflow: hidden;
 }
 
-/* 动态背景装饰 */
 .background-decoration {
   position: absolute;
   top: 0;
@@ -153,7 +151,6 @@
   opacity: 0.9;
 }
 
-/* Google登录样式 */
 .google-login-section {
   margin-bottom: 30px;
   width: 100%;
@@ -161,19 +158,16 @@
   justify-content: center;
 }
 
-/* 覆盖Google按钮的默认样式 */
 .google-login-section > div,
 .google-login-section iframe {
   width: 100% !important;
 }
 
-/* 确保Google按钮容器占满宽度 */
 .google-login-section > div > div,
 .google-login-section .S9gUrf-YoZ4jf {
   width: 100% !important;
 }
 
-/* 更具体的选择器来覆盖Google的样式 */
 .google-login-section button,
 .google-login-section [role="button"],
 .google-login-section .nsm7Bb-HzV7m-LgbsSe,
@@ -218,12 +212,10 @@
   outline: none !important;
 }
 
-/* 强制覆盖任何内联样式 */
 .google-login-section * {
   box-sizing: border-box !important;
 }
 
-/* 特别处理Google按钮的内部元素 */
 .google-login-section .nsm7Bb-HzV7m-LgbsSe-MJoBVe,
 .google-login-section .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb {
   height: 100% !important;
@@ -232,7 +224,6 @@
   justify-content: center !important;
 }
 
-/* 分隔线 */
 .divider {
   text-align: center;
   margin: 30px 0;
@@ -265,7 +256,6 @@
   border-radius: 12px;
 }
 
-/* 表单样式 */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -327,7 +317,6 @@
   opacity: 0.7;
 }
 
-/* 密码输入容器 */
 .password-input-container {
   position: relative;
 }
@@ -360,7 +349,6 @@
   background: rgba(0, 72, 144, 0.1);
 }
 
-/* 错误消息 */
 .error-message {
   background: linear-gradient(135deg, #fef2f2, #fee2e2);
   color: #dc2626;
@@ -392,7 +380,6 @@
   }
 }
 
-/* 登录按钮 */
 .login-button {
   background: linear-gradient(135deg, #001d3d 0%, #004890 50%, #0066cc 100%);
   color: white;
@@ -451,7 +438,6 @@
   flex-shrink: 0;
 }
 
-/* 按钮加载动画 */
 .button-spinner {
   width: 20px;
   height: 20px;
@@ -508,7 +494,6 @@
   flex-shrink: 0;
 }
 
-/* 响应式设计 */
 @media (max-width: 768px) {
   .login-page {
     padding: 15px;
@@ -569,7 +554,6 @@
   }
 }
 
-/* 高对比度模式支持 */
 @media (prefers-contrast: high) {
   .login-container {
     border: 3px solid #000;
@@ -591,7 +575,6 @@
   }
 }
 
-/* 减少动画效果 */
 @media (prefers-reduced-motion: reduce) {
   .login-container,
   .form-group input,
@@ -613,24 +596,23 @@
   }
 }
 
-/* 注册页面紧凑布局样式 */
 .register-form {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* 减少间距 */
+  gap: 16px; 
 }
 
 .form-group.compact {
-  margin-bottom: 0; /* 移除额外的margin */
+  margin-bottom: 0; 
 }
 
 .form-group.compact label {
-  margin-bottom: 8px; /* 减少label间距 */
+  margin-bottom: 8px; 
   font-size: 0.95rem;
 }
 
 .form-group.compact input {
-  padding: 14px 18px; /* 稍微减少padding */
+  padding: 14px 18px; 
 }
 
 .password-row {
@@ -641,10 +623,10 @@
 
 .form-group.half-width {
   flex: 1;
-  min-width: 0; /* 允许flex item缩小 */
+  min-width: 0; 
 }
 
-/* 在小屏幕上恢复垂直布局 */
+
 @media (max-width: 480px) {
   .password-row {
     flex-direction: column;
@@ -656,27 +638,27 @@
   }
 }
 
-/* 注册页面头部紧凑样式 */
+
 .register-header-compact {
-  gap: 16px !important; /* 减少整体间距 */
+  gap: 16px !important; 
 }
 
 .header-section {
-  margin-bottom: 8px; /* 减少标题区域的底部间距 */
+  margin-bottom: 8px; 
 }
 
 .header-section h2 {
-  margin-bottom: 6px; /* 减少标题到副标题的间距 */
+  margin-bottom: 6px; 
 }
 
 .header-section .login-subtitle {
-  margin-bottom: 0; /* 移除副标题的底部间距 */
+  margin-bottom: 0; 
 }
 
 .google-login-section.compact {
-  margin-bottom: 16px; /* 减少Google登录按钮的底部间距 */
+  margin-bottom: 16px; 
 }
 
 .divider.compact {
-  margin: 16px 0; /* 减少分隔线的上下间距 */
+  margin: 16px 0; 
 }

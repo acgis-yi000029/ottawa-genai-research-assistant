@@ -31,14 +31,14 @@ def test_vector_store():
         print("\n1. Initializing VectorStore...")
         config = VectorConfig()
         vector_store = VectorStore(config)
-        print(f"✅ VectorStore initialized successfully")
+        print(f"VectorStore initialized successfully")
         print(f"   Persist directory: {config.get_persist_directory}")
         print(f"   Collection name: {config.get_collection_name}")
 
         # 2. Get collection info
         print("\n2. Getting collection info...")
         info = vector_store.get_collection_info()
-        print(f"✅ Collection info retrieved:")
+        print(f"Collection info retrieved:")
         print(f"   Collection: {info['collection_name']}")
         print(f"   Total chunks: {info['total_chunks']}")
 
@@ -60,7 +60,7 @@ def test_vector_store():
             chunks=test_chunks,
             embeddings=dummy_embeddings,
         )
-        print(f"✅ Added {len(chunk_ids)} chunks")
+        print(f"Added {len(chunk_ids)} chunks")
         print(f"   Chunk IDs: {chunk_ids[:3]}...")
 
         # 4. Test search
@@ -70,7 +70,7 @@ def test_vector_store():
             query_embedding=query_embedding,
             top_k=3,
         )
-        print(f"✅ Search completed, found {len(results)} results")
+        print(f"Search completed, found {len(results)} results")
         for i, result in enumerate(results[:2], 1):
             print(f"   Result {i}:")
             print(f"     ID: {result['id']}")
@@ -80,32 +80,32 @@ def test_vector_store():
         # 5. Test retrieval by IDs
         print("\n5. Testing retrieval by IDs...")
         retrieved = vector_store.get_by_ids(chunk_ids[:2])
-        print(f"✅ Retrieved {len(retrieved)} chunks by IDs")
+        print(f"Retrieved {len(retrieved)} chunks by IDs")
         for i, chunk in enumerate(retrieved, 1):
             print(f"   Chunk {i}: {chunk['text'][:50]}...")
 
         # 6. Test collection info after addition
         print("\n6. Checking collection info after addition...")
         info_after = vector_store.get_collection_info()
-        print(f"✅ Collection now has {info_after['total_chunks']} chunks")
+        print(f"Collection now has {info_after['total_chunks']} chunks")
 
         # 7. Test document deletion
         print("\n7. Testing document deletion...")
         deleted = vector_store.delete_document(doc_id)
-        print(f"✅ Document deletion: {deleted}")
+        print(f"Document deletion: {deleted}")
 
         # 8. Final collection info
         print("\n8. Final collection info...")
         final_info = vector_store.get_collection_info()
-        print(f"✅ Final chunk count: {final_info['total_chunks']}")
+        print(f"Final chunk count: {final_info['total_chunks']}")
 
         print("\n" + "=" * 60)
-        print("✅ All tests passed!")
+        print("All tests passed!")
         print("=" * 60)
         return True
 
     except Exception as e:
-        print(f"\n❌ Test failed with error: {e}")
+        print(f"\nTest failed with error: {e}")
         import traceback
         traceback.print_exc()
         return False

@@ -1,5 +1,5 @@
 """
-🔍 Vector Store Service
+Vector Store Service
 
 ChromaDB client wrapper for vector storage and retrieval operations.
 """

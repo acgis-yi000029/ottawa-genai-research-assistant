@@ -16,7 +16,6 @@ class BaseRepository(ABC, Generic[T]):
 
     def __init__(self, data_file: str):
         """Initialize repository with data file path."""
-        # 验证数据文件路径是否符合monk目录约束
         data_validator.validate_repository_init(data_file)
         
         self.data_file = Path(data_file)

@@ -87,7 +87,6 @@ Try asking me about business growth, employment trends, or upload a document for
   }
 };
 
-// AI响应模拟函数
 export const simulateAIResponse = (userMessage: string): AIResponse => {
   const lowerMessage = userMessage.toLowerCase();
   

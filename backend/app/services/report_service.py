@@ -1,5 +1,5 @@
 """
-📊 Report Service
+Report Service
 
 Handles report generation and management through the repository layer.
 Demonstrates the complete Service → Repository → monk/ architecture.

@@ -42,7 +42,7 @@ class UploadResponse(BaseModel):
     size: int
     message: str
     processing_status: str
-    status: str = "uploaded"  # 添加status字段用于测试兼容性
+    status: str = "uploaded"  
 
 class DocumentSearchRequest(BaseModel):
     query: str

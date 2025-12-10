@@ -1,5 +1,5 @@
 """
-📄 Document Service
+Document Service
 
 Handles PDF document processing, text extraction, and vector storage.
 Now properly uses the Repository layer for data persistence.

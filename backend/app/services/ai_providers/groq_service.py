@@ -34,12 +34,12 @@ class GroqService:
             try:
                 self.client = Groq(api_key=self.api_key)
                 self.is_available = True
-                logger.info("✅ Groq AI service initialized successfully")
+                logger.info("Groq AI service initialized successfully")
             except Exception as e:
-                logger.warning(f"⚠️ Failed to initialize Groq: {e}")
+                logger.warning(f"Failed to initialize Groq: {e}")
                 self.is_available = False
         else:
-            logger.warning("⚠️ GROQ_API_KEY not found in environment variables")
+            logger.warning("GROQ_API_KEY not found in environment variables")
     
     async def generate_response(self, message: str, language: str = "en") -> Dict[str, Any]:
         """
@@ -59,8 +59,7 @@ class GroqService:
             # Prepare language-specific system prompt
             language_prompts = {
                 "en": "You are a helpful AI assistant specialized in Ottawa economic development and business research. Provide detailed, accurate information in English.",
-                "fr": "Vous êtes un assistant IA spécialisé dans le développement économique et la recherche commerciale d'Ottawa. Fournissez des informations détaillées et précises en français.",
-                "zh": "您是专门从事渥太华经济发展和商业研究的AI助手。请用中文提供详细、准确的信息。"
+                "fr": "Vous êtes un assistant IA spécialisé dans le développement économique et la recherche commerciale d'Ottawa. Fournissez des informations détaillées et précises en français."
             }
             
             system_prompt = language_prompts.get(language, language_prompts["en"])
@@ -91,7 +90,7 @@ class GroqService:
             }
             
         except Exception as e:
-            logger.error(f"❌ Groq API error: {e}")
+            logger.error(f"Groq API error: {e}")
             raise Exception(f"Groq service error: {str(e)}")
     
     def get_status(self) -> Dict[str, Any]:

@@ -1,5 +1,5 @@
 """
-⚙️ Configuration Management
+Configuration Management
 
 Centralized configuration using Pydantic Settings for type safety.
 """

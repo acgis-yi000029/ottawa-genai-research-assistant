@@ -20,7 +20,6 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLanguageToggle = () => {
-    // 切换到另一种语言
     const newLanguage = language === 'en' ? 'fr' : 'en';
     setLanguage(newLanguage);
   };
@@ -31,7 +30,6 @@ const Navbar: React.FC = () => {
       navigate('/');
       setIsProfileMenuOpen(false);
     } catch (error) {
-      // 生产环境中应该使用适当的错误处理
     }
   };
 
@@ -39,12 +37,9 @@ const Navbar: React.FC = () => {
     return location.pathname === path;
   };
 
-  // 检查是否在认证页面（登录/注册）
   const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
 
-  // 导航项配置 - 移除Homepage选项，让Logo承担回首页功能
   const navigationItems = [
-    // 认证用户的功能选项 - 只有登录用户且不在认证页面时显示
     ...(!isAuthPage && isAuthenticated ? [
       {
         path: '/chat',
@@ -121,7 +116,7 @@ const Navbar: React.FC = () => {
                 onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
               >
                 <div className="user-avatar">
-                  {/* 使用用户名首字母作为头像 */}
+                  {}
                   <div className="avatar-circle">
                     {user?.username?.charAt(0).toUpperCase() || 'U'}
                   </div>

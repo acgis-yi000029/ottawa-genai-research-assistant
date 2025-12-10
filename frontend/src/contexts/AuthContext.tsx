@@ -21,7 +21,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const isAuthenticated = !!user;
 
-  // 初始化时检查用户登录状态
   useEffect(() => {
     const initAuth = async () => {
       try {
@@ -31,7 +30,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         }
       } catch (error) {
         console.error('Auth initialization error:', error);
-        // 如果获取用户信息失败，清除本地存储的token
         authService.logout();
       } finally {
         setIsLoading(false);
@@ -74,7 +72,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       setIsLoading(true);
       setError(null);
       
-      // 使用真实的Google OAuth登录
       const authResponse: AuthResponse = await authService.googleLogin(response);
       setUser(authResponse.user);
     } catch (error: any) {

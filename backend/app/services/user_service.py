@@ -1,5 +1,5 @@
 """
-👤 User Service
+User Service
 
 Handles user operations through the repository layer.
 This demonstrates the correct Service → Repository → monk/ architecture.

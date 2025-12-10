@@ -62,7 +62,6 @@ const LoginPage: React.FC = () => {
 
     try {
       await login(formData);
-      // 登录成功后跳转到主页
       navigate('/', { replace: true });
     } catch (error: any) {
       setFormError(error.message || 'Login failed');
@@ -72,7 +71,6 @@ const LoginPage: React.FC = () => {
   const handleGoogleSuccess = async (response: any) => {
     try {
       await googleLogin(response);
-      // Google登录成功后跳转到主页
       navigate('/', { replace: true });
     } catch (error: any) {
       setFormError(error.message || 'Google login failed');
@@ -85,7 +83,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className="login-page">
-      {/* 背景装饰元素 */}
+      {}
       <div className="background-decoration">
         <div className="floating-shape shape-1"></div>
         <div className="floating-shape shape-2"></div>
@@ -94,7 +92,7 @@ const LoginPage: React.FC = () => {
       </div>
 
       <div className="login-container">
-        {/* Logo区域 */}
+        {}
         <div className="login-logo">
           <div className="logo-icon">
             <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +116,7 @@ const LoginPage: React.FC = () => {
         </div>
 
         <div className="login-form-container">
-          {/* Google Login */}
+          {}
           <div className="google-login-section">
             <GoogleLogin
               onSuccess={handleGoogleSuccess}
@@ -136,7 +134,7 @@ const LoginPage: React.FC = () => {
             <span>or</span>
           </div>
 
-          {/* Email/Password Login */}
+          {}
           <form onSubmit={handleSubmit} className="login-form">
             <div className="form-group">
               <label htmlFor="email">
