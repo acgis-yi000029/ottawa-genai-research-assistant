@@ -117,8 +117,7 @@ const DocumentUploadPage: React.FC = () => {
       setFiles(prev => prev.filter(file => file.id !== fileId));
     } catch (error) {
       console.error('Error deleting file:', error);
-      // Still remove from UI even if API call fails
-      setFiles(prev => prev.filter(file => file.id !== fileId));
+      alert('Failed to delete document on server. Please try again.');
     }
   };
 
