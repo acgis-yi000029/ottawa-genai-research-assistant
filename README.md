@@ -1,4 +1,4 @@
-The attached zip file contains the current backend and frontend code for the GenAI Internal Research Tool. To run the backend, please create your own .env file with LLM API credentials, then run:
+To run the backend, please create your own .env file with LLM API credentials, then run:
 
 cd backend
 pip install -r requirements.txt
