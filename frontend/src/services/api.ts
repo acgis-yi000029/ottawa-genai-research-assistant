@@ -99,6 +99,13 @@ class ApiClient {
       headers: {}, // Let browser set Content-Type for FormData
     });
   }
+
+  // NEW: generic DELETE method with auth header
+  async delete<T>(endpoint: string): Promise<T> {
+    return this.request<T>(endpoint, {
+      method: 'DELETE',
+    });
+  }
 }
 
 // Initialize API client
@@ -132,7 +139,8 @@ export const realApi = {
       id: response.id,
       type: 'assistant',
       content: response.response,
-      timestamp: new Date(response.timestamp)
+      timestamp: new Date(response.timestamp),
+      confidence: response.confidence
     };
   },
 
@@ -172,8 +180,7 @@ export const realApi = {
   },
 
   deleteFile: async (fileId: string): Promise<void> => {
-    const url = `${API_BASE_URL}/documents/${fileId}`;
-    await fetch(url, { method: 'DELETE' });
+    await apiClient.delete<void>(`/documents/${fileId}`);
   },
 
   // Statistics API

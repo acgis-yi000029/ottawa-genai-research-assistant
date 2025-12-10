@@ -65,6 +65,7 @@ class ChatResponse(BaseModel):
     timestamp: datetime
     sources: list[str] | None = None
     charts: dict[str, Any] | None = None
+    confidence: str | None = None
 
 
 class ConversationSummary(BaseModel):

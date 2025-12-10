@@ -145,3 +145,28 @@ class DocumentChunkRepository(BaseRepository[DocumentChunk]):
             ):
                 chunks.append(self._from_dict(item))
         return chunks
+
+    def delete_by_doc_id(self, doc_id: str) -> int:
+        """
+        Delete all chunks that belong to a specific document.
+
+        Args:
+            doc_id: Document identifier
+
+        Returns:
+            Number of deleted chunks.
+        """
+        data = self._load_data()
+        remaining: list[dict[str, Any]] = []
+        deleted_count = 0
+
+        for item in data:
+            if item.get("doc_id") == doc_id:
+                deleted_count += 1
+            else:
+                remaining.append(item)
+
+        if deleted_count > 0:
+            self._save_data(remaining)
+
+        return deleted_count

@@ -64,6 +64,7 @@ async def send_demo_message(
             timestamp=datetime.now(timezone.utc),
             sources=response.get("sources", []),
             charts=response.get("charts"),
+            confidence=response.get("confidence"),
         )
         
     except Exception as e:
@@ -151,6 +152,7 @@ async def send_message(
             timestamp=datetime.now(timezone.utc),
             sources=response.get("sources", []),
             charts=response.get("charts"),
+            confidence=response.get("confidence"),
         )
 
     except Exception as e:

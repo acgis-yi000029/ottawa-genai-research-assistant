@@ -10,6 +10,7 @@ import logging
 import math
 import os
 import random
+import numpy as np
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Union
 
@@ -19,6 +20,8 @@ from app.core.config import Settings
 from app.models.document import Document, DocumentMetadata, DocumentChunk
 from app.repositories.document_repository import DocumentRepository, DocumentChunkRepository
 from app.services.vector_store import VectorStore
+from sentence_transformers import SentenceTransformer
+
 
 logger = logging.getLogger(__name__)
 
@@ -32,7 +35,10 @@ class DocumentService:
         self.document_repo = DocumentRepository()
         self.chunk_repo = DocumentChunkRepository()
         self.vector_store = VectorStore()
-
+        
+        # Load sentence-transformer model once
+        self.embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+        
         # Ensure upload directory exists
         os.makedirs(self.upload_dir, exist_ok=True)
 
@@ -141,7 +147,7 @@ class DocumentService:
             # Create failed document record
             failed_document = Document(
                 id=doc_id,
-                user_id=user_id,  # 添加缺失的user_id字段
+                user_id=user_id, 
                 filename=filename,
                 title=filename,
                 description=f"Failed to process: {str(e)}",
@@ -272,62 +278,29 @@ class DocumentService:
         """Generate embeddings for text chunks using a simple hash-based approach."""
 
 
-        embeddings = []
-        for chunk in chunks:
-            try:
-                # Create a deterministic embedding based on content
-                # This is a simplified approach for demonstration
-                # In production, use OpenAI embeddings or sentence-transformers
+        if not chunks:
+            return []
 
-                # Generate multiple hashes to create more dimensions
-                embedding = []
+        try:
+            # Encode all chunks in one batch
+            embeddings = self.embedding_model.encode(
+                chunks,
+                normalize_embeddings=True,
+                convert_to_numpy=True,
+                show_progress_bar=False,
+            )
 
-                # Use different hash functions and salts to create variety
-                hash_functions = [
-                    lambda x, salt: hashlib.md5(f"{salt}_{x}".encode()).hexdigest(),
-                    lambda x, salt: hashlib.sha1(f"{salt}_{x}".encode()).hexdigest(),
-                    lambda x, salt: hashlib.sha256(
-                        f"{salt}_{x}".encode()
-                    ).hexdigest()[:32],
-                ]
+            # Ensure numpy float32 array with shape (n_chunks, embedding_dim)
+            embeddings = np.asarray(embeddings, dtype=np.float32)
+            if embeddings.ndim == 1:
+                embeddings = embeddings.reshape(1, -1)
 
-                salts = ['text', 'content', 'chunk', 'semantic', 'vector', 'embed']
+            return embeddings.tolist()
 
-                for hash_func in hash_functions:
-                    for salt in salts:
-                        hex_hash = hash_func(chunk, salt)
-                        # Convert hex pairs to normalized floats
-                        for i in range(0, min(len(hex_hash), 32), 2):
-                            hex_pair = hex_hash[i:i + 2]
-                            value = int(hex_pair, 16) / 255.0
-                            # Apply some mathematical transformation for better distribution
-                            transformed_value = (
-                                math.sin(value * math.pi) * 0.5 + 0.5
-                            )
-                            embedding.append(transformed_value)
-
-                            if len(embedding) >= 384:
-                                break
-                    if len(embedding) >= 384:
-                        break
-
-                # Ensure exactly 384 dimensions
-                embedding = embedding[:384]
-                while len(embedding) < 384:
-                    # Fill remaining with content-based values
-                    chunk_len_factor = (len(chunk) % 256) / 255.0
-                    embedding.append(chunk_len_factor)
-
-                embeddings.append(embedding)
-
-            except Exception as e:
-                logger.error(f"Error generating embedding for chunk: {e}")
-                # Fallback to deterministic random embedding based on chunk content
-                random.seed(hash(chunk))  # Deterministic seed
-                fallback_embedding = [random.random() for _ in range(384)]
-                embeddings.append(fallback_embedding)
-
-        return embeddings
+        except Exception as e:
+            logger.error(f"Error generating embeddings: {e}")
+            # Hard fail: if embeddings cannot be generated, let the caller see the error
+            raise
 
     async def _store_in_vector_db(
         self,
@@ -547,8 +520,30 @@ class DocumentService:
             # 2. Delete record from repository
             deleted = self.document_repo.delete(doc_id)
 
-            # 3. Remove vectors from vector database (when implemented)
-            # This would be implemented when vector storage is added
+            # 3. Remove chunks from chunk repository
+            try:
+                deleted_chunks = self.chunk_repo.delete_by_doc_id(doc_id)
+                logger.info(
+                    "Deleted %s chunks for document %s from chunk repository",
+                    deleted_chunks,
+                    doc_id,
+                )
+            except Exception as e:
+                logger.error(
+                    "Error deleting chunks for document %s: %s",
+                    doc_id,
+                    e,
+                )
+
+            # 4. Remove vectors from vector database
+            try:
+                self.vector_store.delete_document(doc_id)
+            except Exception as e:
+                logger.error(
+                    "Error deleting vectors for document %s: %s",
+                    doc_id,
+                    e,
+                )
 
             return deleted
 

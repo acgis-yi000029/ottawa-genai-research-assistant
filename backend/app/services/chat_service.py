@@ -10,6 +10,7 @@ All services are completely free and provide enterprise-grade AI responses.
 """
 
 import logging
+import re
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
@@ -27,6 +28,8 @@ class ChatService:
     """
     Chat service with free AI integration and intelligent fallback
     """
+    # Minimum similarity required to trust ED PDF matches
+    RAG_MIN_SIMILARITY: float = 0.4
     
     def __init__(self, settings: Settings):
         """Initialize chat service with free AI providers"""
@@ -49,9 +52,9 @@ class ChatService:
         available_services = [name for name, service in self.ai_services if service.is_available]
         
         if available_services:
-            logger.info(f"✅ Free AI services available: {', '.join(available_services)}")
+            logger.info(f"Free AI services available: {', '.join(available_services)}")
         else:
-            logger.warning("⚠️ No AI services available - will use mock responses")
+            logger.warning("No AI services available - will use mock responses")
     
     async def process_message(
         self, 
@@ -75,6 +78,13 @@ class ChatService:
         # Store document excerpts for citation in the response
         display_snippets: list[str] = []
 
+         # Unified fixed text when ED PDFs do not provide a trustworthy match
+        NO_ED_MATCH_TEXT = (
+            "No relevant information was found in the current ED update reports."
+        )
+
+        confidence_label: Optional[str] = None
+
         try:
             # Try document search
             rag_results: list[dict[str, Any]] = []
@@ -92,6 +102,76 @@ class ChatService:
             sources: list[str] = []
             model_input: str
 
+            # 1) No RAG results at all -> return fixed message
+            if not rag_results:
+                logger.info(
+                    "No RAG results found; returning fixed ED 'not found' message "
+                    "without calling any external LLM."
+                )
+                response: Dict[str, Any] = {
+                    "text": NO_ED_MATCH_TEXT,
+                    "provider": "RAG-filter",
+                    "model": "ed-pdf-only",
+                    "language": language,
+                    "tokens_used": 0,
+                    "cost": 0.0,
+                    "sources": [],
+                    "charts": {},
+                }
+                if conversation_id and user_id:
+                    await self._save_conversation(
+                        conversation_id, user_id, message, response["text"], language
+                    )
+                return response
+            
+            # 2) Have results but best similarity is below threshold
+            try:
+                best_score = max(
+                    float(item.get("similarity_score") or 0.0)
+                    for item in rag_results
+                )
+            except Exception as score_error:
+                logger.warning(
+                    f"Failed to read similarity_score from RAG results: {score_error}"
+                )
+                best_score = 0.0
+
+            if best_score < self.RAG_MIN_SIMILARITY:
+                logger.info(
+                    "RAG best similarity %.3f below threshold %.3f; "
+                    "returning fixed ED 'not found' message without calling any external LLM",
+                    best_score,
+                    self.RAG_MIN_SIMILARITY,
+                )
+                response = {
+                    "text": NO_ED_MATCH_TEXT,
+                    "provider": "RAG-filter",
+                    "model": "ed-pdf-only",
+                    "language": language,
+                    "tokens_used": 0,
+                    "cost": 0.0,
+                    "sources": [],
+                    "charts": {},
+                    "confidence": confidence_label,
+                }
+                if conversation_id and user_id:
+                    await self._save_conversation(
+                        conversation_id, user_id, message, response["text"], language
+                    )
+                return response
+            
+            mid = self.RAG_MIN_SIMILARITY + 0.05
+            high = self.RAG_MIN_SIMILARITY + 0.10
+
+            if best_score >= high:
+                confidence_label = "High"
+            elif best_score >= mid:
+                confidence_label = "Medium"
+            else:
+                confidence_label = "Low"
+
+            
+            # 3）Have results and best similarity is upper threshold
             if rag_results:
                 context_parts: list[str] = []
 
@@ -102,21 +182,33 @@ class ChatService:
                         or item.get("doc_id")
                         or "Document"
                     )
-                    page_number = item.get("page_number") or 1
                     chunk_text = (item.get("chunk_text") or "").strip()
                     if not chunk_text:
                         continue
-
-                    label = f"{filename} (page {page_number})"
-                    sources.append(label)
-                    snippet = f"[{label}]\n{chunk_text}"
+                    
+                    snippet = f"[{filename}]\n{chunk_text}"
                     context_parts.append(snippet)
-                    display_snippets.append(snippet)
+
+                # Select a single best citation from the top-ranked chunk
+                top_item = rag_results[0]
+                top_filename = (
+                    top_item.get("title")
+                    or top_item.get("filename")
+                    or top_item.get("doc_id")
+                    or "Document"
+                )
+                top_chunk_text = (top_item.get("chunk_text") or "").strip()
+                if top_chunk_text:
+                    top_label = f"{top_filename}"
+                    # Only keep this one label as the citation source
+                    sources = [top_label]
+                    # Only this snippet will be exposed in charts["citations"]
+                    display_snippets = [f"[{top_label}]\n{top_chunk_text}"]
 
                 if context_parts:
                     context_text = "\n\n".join(context_parts)
 
-                    # prevent prompts from being too long    
+                    # Prevent prompts from being too long
                     max_chars = 20000
                     if len(context_text) > max_chars:
                         context_text = context_text[:max_chars]
@@ -137,13 +229,25 @@ class ChatService:
                 # No document hits
                 model_input = message
 
-            # Original logic
+            # call free AI providers with the prepared model_input
             for service_name, service in self.ai_services:
                 if service.is_available:
                     try:
-                        logger.info(f"🤖 Trying {service_name} AI service...")
+                        logger.info(f"Trying {service_name} AI service...")
                         response = await service.generate_response(model_input, language)
                         
+                        # Use the final answer to reselect the best-matching chunk for citation.
+                        if rag_results and isinstance(response.get("text"), str):
+                            aligned_sources, aligned_snippets = self._align_citations_with_answer(
+                                answer_text=response["text"],
+                                rag_results=rag_results,
+                            )
+                            # Only override the original top1 setting when a better alignment result is found.
+                            if aligned_sources:
+                                sources = aligned_sources
+                            if aligned_snippets:
+                                display_snippets = aligned_snippets
+
                         # If documentation was used, include the source in the response for API/frontend use.
                         if sources:
                             existing_sources = response.get("sources") or []
@@ -160,24 +264,28 @@ class ChatService:
                                 existing_charts = {}
                             existing_charts["citations"] = display_snippets
                             response["charts"] = existing_charts
-                            #citations_text = "\n\n---\nOriginal excerpts used:\n\n" + "\n\n".join(display_snippets)
-                            #response["text"] = (response.get("text") or "").rstrip() + citations_text
+                            citations_text = "\n\n---\nOriginal excerpts used:\n\n" + "\n\n".join(display_snippets)
+                            response["text"] = (response.get("text") or "").rstrip() + citations_text
+
+                        # Attach confidence level if available
+                        if confidence_label is not None:
+                            response["confidence"] = confidence_label
 
                         # Save conversation if IDs provided
                         if conversation_id and user_id:
                             await self._save_conversation(
                                 conversation_id, user_id, message, response["text"], language
                             )
-                        
-                        logger.info(f"✅ {service_name} response generated successfully")
+    
+                        logger.info(f"{service_name} response generated successfully")
                         return response
                         
                     except Exception as e:
-                        logger.warning(f"⚠️ {service_name} failed: {e}")
+                        logger.warning(f"{service_name} failed: {e}")
                         continue
             
             # If all AI services fail, use fallback
-            logger.warning("⚠️ All AI services failed, using mock response")
+            logger.warning("All AI services failed, using mock response")
             fallback = await self._get_fallback_response(message, language)
             if sources:
                 fallback["sources"] = sources
@@ -190,7 +298,7 @@ class ChatService:
             return fallback
             
         except Exception as e:
-            logger.error(f"❌ Chat service error: {e}")
+            logger.error(f"Chat service error: {e}")
             fallback = await self._get_fallback_response(message, language)
             return fallback
     
@@ -201,7 +309,6 @@ class ChatService:
         fallback_responses = {
             "en": "Thank you for your question about Ottawa's economic development. Based on our local data, I can provide detailed analysis. What specific information would you like to know about business opportunities, investment climate, or economic programs?",
             "fr": "Merci pour votre question sur le développement économique d'Ottawa. Basé sur nos données locales, je peux fournir une analyse détaillée. Quelles informations spécifiques aimeriez-vous connaître sur les opportunités d'affaires, le climat d'investissement ou les programmes économiques?",
-            "zh": "感谢您关于渥太华经济发展的问题。基于我们的本地数据，我可以提供详细分析。您希望了解关于商业机会、投资环境或经济项目的哪些具体信息？"
         }
         
         return {
@@ -214,6 +321,101 @@ class ChatService:
             "note": "This is a fallback response. Please set up free API keys for Groq and Gemini for best experience."
         }
     
+    def _align_citations_with_answer(
+        self,
+        answer_text: str,
+        rag_results: list[dict[str, Any]],
+    ) -> tuple[list[str], list[str]]:
+        """
+        Based on the model's final answer, select the best-matching chunk from `rag_results` 
+        and return (sources, display_snippets). If no match is found, return ([], []) 
+        to allow the caller to backtrack.
+        """
+        try:
+            if not answer_text or not rag_results:
+                return [], []
+
+            # Use only the main body of the answer, avoiding automatic matching with already included citations.
+            lower_answer = answer_text.lower()
+            if "---" in lower_answer:
+                lower_answer = lower_answer.split("---", 1)[0]
+
+            # 1) Extract numbers from the answer and keep only “real” values
+            number_pattern = re.compile(r"\d[\d,.]*")
+            all_numbers = number_pattern.findall(lower_answer)
+
+            # Keep numbers that look like years or larger values (>= 4 digits),
+            # to avoid noise from small numbers.
+            raw_numbers: list[str] = []
+            for n in all_numbers:
+                digits_only = re.sub(r"[^\d]", "", n)
+                if len(digits_only) >= 4:
+                    raw_numbers.append(n)
+
+            # Normalized numbers: remove commas and trailing dots.
+            normalized_numbers = {
+                n.replace(",", "").strip(".")
+                for n in raw_numbers
+                if n
+            }
+
+            # 2）Extracting keywords
+            word_pattern = re.compile(r"[a-z]{4,}")
+            answer_tokens = word_pattern.findall(lower_answer)
+            answer_token_set = set(answer_tokens)
+
+            best_item = None
+            best_score = 0.0
+
+            for item in rag_results:
+                chunk_text = (item.get("chunk_text") or "")
+                if not chunk_text:
+                    continue
+
+                chunk_lower = chunk_text.lower()
+                chunk_no_commas = chunk_lower.replace(",", "")
+
+                score = 0.0
+
+                # Number matching: Each matched number is given a higher weight.
+                for num in raw_numbers:
+                    if num and num in chunk_lower:
+                        score += 3.0
+                for num in normalized_numbers:
+                    if num and num in chunk_no_commas:
+                        score += 3.0
+
+                # Keyword overlap: low weight, used to break ties when numbers are the same or missing.
+                chunk_tokens = set(word_pattern.findall(chunk_lower))
+                common_tokens = answer_token_set & chunk_tokens
+                if common_tokens:
+                    score += 0.1 * len(common_tokens)
+
+                if score > best_score:
+                    best_score = score
+                    best_item = item
+
+            # If a chunk with a score > 0 is found, it will be used for citation.
+            if best_item and best_score > 0.0:
+                filename = (
+                    best_item.get("title")
+                    or best_item.get("filename")
+                    or best_item.get("doc_id")
+                    or "Document"
+                )
+                chunk_text = (best_item.get("chunk_text") or "").strip()
+                if chunk_text:
+                    label = f"{filename}"
+                    sources = [label]
+                    display_snippets = [f"[{label}]\n{chunk_text}"]
+                    return sources, display_snippets
+
+            # If no match is found, the caller should revert to the original top 1 logic.
+            return [], []
+        except Exception:
+            # Any anomalies will not affect the main process; a rollback will be performed directly.
+            return [], []
+        
     async def _save_conversation(
         self, 
         conversation_id: str, 

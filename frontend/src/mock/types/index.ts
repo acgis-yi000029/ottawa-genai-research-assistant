@@ -14,6 +14,7 @@ export interface Message {
   timestamp: Date;
   chart?: any;
   hasChart?: boolean;
+  confidence?: string;
 }
 
 export interface UploadedFile {

@@ -12,6 +12,7 @@ interface Message {
   timestamp: Date;
   chart?: any;
   hasChart?: boolean;
+  confidence?: string;
 }
 
 const ChatPage: React.FC = () => {
@@ -75,7 +76,8 @@ const ChatPage: React.FC = () => {
         content: apiResponse.content,
         timestamp: new Date(apiResponse.timestamp || Date.now()),
         hasChart: false, // API response might include chart data
-        chart: undefined
+        chart: undefined,
+        confidence: apiResponse.confidence
       };
 
       setMessages(prev => [...prev, assistantMessage]);
@@ -137,7 +139,11 @@ const ChatPage: React.FC = () => {
                     <p>{message.content}</p>
                   )}
                 </div>
-
+                {message.type === 'assistant' && message.confidence && (
+                  <div className="confidence-indicator">
+                    Confidence: <strong>{message.confidence}</strong>
+                  </div>
+                )}
                 {message.hasChart && message.chart && (
                   <div className="message-chart">
                     <div className="chart-header">
