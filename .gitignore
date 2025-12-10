@@ -104,6 +104,10 @@ trained_models/
 backend/uploads/*
 !backend/uploads/.gitkeep
 
+# 🗄️ Local runtime data (chats, users, vector DB)
+backend/monk/*
+!backend/monk/.gitkeep
+
 # 🔑 Security and API Keys
 *.pem
 *.key

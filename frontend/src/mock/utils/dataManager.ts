@@ -19,7 +19,7 @@ export interface MockDataSet {
 export const mockDataSets: Record<string, MockDataSet> = {
   demo: {
     name: 'Demo Data',
-    description: '演示用数据集 - 用于展示和演讲',
+    description: 'Demonstration dataset',
     reports: mockReports,
     files: mockUploadedFiles,
     stats: getMockStats((key: string) => key), // Use default key as fallback
@@ -52,7 +52,7 @@ export class MockDataManager {
       this.notifyListeners();
       return true;
     }
-    console.warn(`数据集 "${dataSetName}" 不存在`);
+    console.warn(`Dataset "${dataSetName}" does not exist`);
     return false;
   }
 
@@ -69,7 +69,7 @@ export class MockDataManager {
       try {
         listener(this.currentDataSet);
       } catch (error) {
-        console.error('监听器执行错误:', error);
+        console.error('Listener execution error:', error);
       }
     });
   }
