@@ -35,7 +35,6 @@ ENV/
 env.bak/
 venv.bak/
 backend/venv/
-frontend/node_modules/
 
 # 🚀 Node.js / React
 node_modules/
