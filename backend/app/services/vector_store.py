@@ -7,6 +7,18 @@ ChromaDB client wrapper for vector storage and retrieval operations.
 import logging
 from typing import Any, Dict, List, Optional
 
+import sys
+# Use pysqlite3 on Linux/Azure when available to satisfy Chroma's sqlite requirement
+try:
+    import pysqlite3  # type: ignore
+
+    # Replace stdlib sqlite3 with pysqlite3 before importing chromadb
+    sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+except ImportError:
+    # On Windows or environments without pysqlite3-binary installed,
+    # fall back to the built-in sqlite3.
+    pass
+
 import chromadb
 from app.core.vector_config import VectorConfig
 from chromadb.config import Settings as ChromaSettings
