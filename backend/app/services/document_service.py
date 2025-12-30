@@ -5,14 +5,13 @@ Handles PDF document processing, text extraction, and vector storage.
 Now properly uses the Repository layer for data persistence.
 """
 
-import hashlib
 import logging
 import math
 import os
-import random
+import re
 import numpy as np
 from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional, Union
+from typing import Any
 
 import pdfplumber
 import pypdf
@@ -20,7 +19,7 @@ from app.core.config import Settings
 from app.models.document import Document, DocumentMetadata, DocumentChunk
 from app.repositories.document_repository import DocumentRepository, DocumentChunkRepository
 from app.services.vector_store import VectorStore
-from sentence_transformers import SentenceTransformer
+from app.services.embedding_provider import create_embedding_model
 
 
 logger = logging.getLogger(__name__)
@@ -36,8 +35,8 @@ class DocumentService:
         self.chunk_repo = DocumentChunkRepository()
         self.vector_store = VectorStore()
         
-        # Load sentence-transformer model once
-        self.embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+        # Load embedding model once (Azure OpenAI or other backend configured via settings)
+        self.embedding_model = create_embedding_model(settings)
         
         # Ensure upload directory exists
         os.makedirs(self.upload_dir, exist_ok=True)
@@ -63,43 +62,72 @@ class DocumentService:
             Dictionary containing processing results
         """
         try:
-            # Extract text from PDF
+            # Extract text from PDF (used for word count and fallback chunking)
             extracted_text = await self._extract_text_from_pdf(file_path)
 
             # Get document metadata
             pdf_metadata = await self._extract_metadata(file_path)
 
+            # Infer quarter from filename
+            quarter = self._infer_quarter_from_filename(filename)
+
             # Get file size
             file_size = os.path.getsize(file_path)
+
+            # Sentence-level text blocking with page information
+            sentence_chunks, sentence_metadatas = await self._split_pdf_into_sentence_chunks(
+                file_path=file_path,
+                filename=filename,
+                quarter=quarter,
+                language=language,
+            )
+
+            # Fallback: if sentence-level extraction failed, fall back to legacy chunking
+            if not sentence_chunks:
+                sentence_chunks = await self._chunk_text(extracted_text)
+                sentence_metadatas = []
+                for i in range(len(sentence_chunks)):
+                    sentence_metadatas.append(
+                        {
+                            "page_number": 1,
+                            "quarter": quarter,
+                            "section": None,
+                            "subsection": None,
+                            "sentence_id": i + 1,
+                            "language": language,
+                            "filename": filename,
+                        }
+                    )
 
             # Create document metadata
             metadata = DocumentMetadata(
                 pages=pdf_metadata.get("page_count", 0),
                 author=pdf_metadata.get("author"),
                 word_count=len(extracted_text.split()) if extracted_text else 0,
+                quarter=quarter,
             )
 
-            # NEW: Text Blocking
-            chunks = await self._chunk_text(extracted_text)
-
-            # NEW: Generate embeddings for each block
+            # Generate embeddings for each sentence / short chunk
+            chunks = sentence_chunks
             embeddings = await self._generate_embeddings(chunks)
 
-            # NEW: Metadata used by the vector library (dict, not Pydantic objects)
+            # Metadata used by the vector library (dict, not Pydantic objects)
             vector_metadata: dict[str, Any] = {
                 "pages": metadata.pages,
                 "author": metadata.author,
                 "word_count": metadata.word_count,
                 "language": language,
                 "filename": filename,
+                "quarter": metadata.quarter,
             }
 
-            # NEW: Write chunks and vectors to the vector library and chunk repository
+            # Write chunks and vectors to the vector library and chunk repository
             await self._store_in_vector_db(
                 doc_id=doc_id,
                 chunks=chunks,
                 embeddings=embeddings,
                 metadata=vector_metadata,
+                chunk_metadatas=sentence_metadatas,
             )
 
             # Create document model
@@ -237,6 +265,76 @@ class DocumentService:
         except Exception as e:
             return {"error": f"Error extracting metadata: {str(e)}"}
 
+    def _infer_quarter_from_filename(self, filename: str) -> str | None:
+        """Infer quarter identifier (e.g. '2022Q1') from an ED PDF filename."""
+        if not filename:
+            return None
+        name = os.path.splitext(os.path.basename(filename))[0].lower()
+        m = re.search(r"q([1-4])[_\- ]*(20\d{2})", name)
+        if m:
+            quarter_num, year = m.groups()
+            return f"{year}Q{quarter_num}"
+        # 2022_q1 / 2022-q1
+        m = re.search(r"(20\d{2})[_\- ]*q([1-4])", name)
+        if m:
+            year, quarter_num = m.groups()
+            return f"{year}Q{quarter_num}"
+        return None
+
+    def _split_into_sentences(self, text: str) -> list[str]:
+        """Split a block of text into sentences or short segments."""
+        if not text:
+            return []
+        # Compress all spaces into single spaces to prevent line breaks from affecting the layout
+        cleaned = " ".join(text.split())
+        sentence_end_pattern = re.compile(r"(?<=[.!?])\s+")
+        parts = sentence_end_pattern.split(cleaned)
+        sentences = [s.strip() for s in parts if s.strip()]
+        return sentences
+
+    async def _split_pdf_into_sentence_chunks(
+        self,
+        file_path: str,
+        filename: str,
+        quarter: str | None,
+        language: str | None,
+    ) -> tuple[list[str], list[dict[str, Any]]]:
+        """Split a PDF into sentence-level chunks with page metadata.
+
+        Returns:
+            A tuple of (chunks, per_chunk_metadata).
+        """
+        chunks: list[str] = []
+        metadatas: list[dict[str, Any]] = []
+
+        try:
+            with pdfplumber.open(file_path) as pdf:
+                sentence_id = 0
+                for page_index, page in enumerate(pdf.pages, start=1):
+                    page_text = page.extract_text()
+                    if not page_text:
+                        continue
+                    sentences = self._split_into_sentences(page_text)
+                    for sentence in sentences:
+                        sentence_id += 1
+                        chunks.append(sentence)
+                        metadatas.append(
+                            {
+                                "page_number": page_index,
+                                "quarter": quarter,
+                                "section": None,
+                                "subsection": None,
+                                "sentence_id": sentence_id,
+                                "language": language,
+                                "filename": filename,
+                            }
+                        )
+        except Exception:
+            # If pdfplumber failed, falls back to the old chunk logic
+            return [], []
+
+        return chunks, metadatas
+
     async def _chunk_text(
         self, text: str, chunk_size: int = 1000, overlap: int = 200
     ) -> list[str]:
@@ -275,7 +373,7 @@ class DocumentService:
         return chunks
 
     async def _generate_embeddings(self, chunks: list[str]) -> list[list[float]]:
-        """Generate embeddings for text chunks using a simple hash-based approach."""
+        """Generate embeddings for text chunks using the configured embedding model."""
 
 
         if not chunks:
@@ -308,6 +406,7 @@ class DocumentService:
         chunks: list[str],
         embeddings: list[list[float]],
         metadata: dict[str, Any],
+        chunk_metadatas: list[dict[str, Any]] | None = None,   # NEW
     ) -> bool:
         """Store document chunks and embeddings in vector database."""
 
@@ -328,14 +427,38 @@ class DocumentService:
             word_count = metadata.get("word_count")
             language = metadata.get("language")
             filename = metadata.get("filename")
+            quarter = metadata.get("quarter")
 
             metadatas: list[dict[str, Any]] = []
             for i, chunk in enumerate(chunks):
+                # Start with any per-chunk metadata that was computed upstream
+                base_meta: dict[str, Any] = {}
+                if chunk_metadatas and i < len(chunk_metadatas):
+                    base_meta.update(chunk_metadatas[i])
+
                 meta: dict[str, Any] = {
-                        "doc_id": doc_id,
-                        "chunk_index": i,
-                        "page_number": 1,  # placeholder
-                    }
+                    "doc_id": doc_id,
+                    "chunk_index": i,
+                    "page_number": base_meta.get("page_number", 1),
+                }
+
+                # Copy structured fields if present and not None
+                if "section" in base_meta:
+                    section = base_meta.get("section")
+                    if section is not None:
+                        meta["section"] = section
+
+                if "subsection" in base_meta:
+                    subsection = base_meta.get("subsection")
+                    if subsection is not None:
+                        meta["subsection"] = subsection
+
+                if "sentence_id" in base_meta:
+                    sentence_id = base_meta.get("sentence_id")
+                    if sentence_id is not None:
+                        meta["sentence_id"] = sentence_id
+                        
+                # Attach document-level metadata
                 if pages is not None:
                     meta["pages"] = int(pages)
                 if author is not None:
@@ -346,10 +469,12 @@ class DocumentService:
                     meta["language"] = str(language)
                 if filename is not None:
                     meta["filename"] = str(filename)
+                if quarter is not None:
+                    meta["quarter"] = str(quarter)
 
                 metadatas.append(meta)
 
-            # Write to the Chroma vector library
+            # Write to the Chroma Vector Library
             chunk_ids = self.vector_store.add_documents(
                 doc_id=doc_id,
                 chunks=chunks,
@@ -357,23 +482,31 @@ class DocumentService:
                 metadatas=metadatas,
             )
 
-             # Write to local chunks persistent repository（Monk JSON）
+            # Write to the Monk JSON local chunk repository
             now = datetime.now(timezone.utc)
             for i, (chunk_id, chunk_text, emb) in enumerate(
                 zip(chunk_ids, chunks, embeddings)
             ):
+                chunk_meta_dict: dict[str, Any] = metadatas[i] if i < len(metadatas) else {}
+                page_number = int(chunk_meta_dict.get("page_number", 1))
+                chunk_metadata = DocumentMetadata(
+                    pages=pages,
+                    author=author,
+                    word_count=word_count,
+                    quarter=quarter,
+                    section=chunk_meta_dict.get("section"),
+                    subsection=chunk_meta_dict.get("subsection"),
+                    sentence_id=chunk_meta_dict.get("sentence_id"),
+                )
+
                 chunk_model = DocumentChunk(
                     id=chunk_id,
                     doc_id=doc_id,
                     chunk_index=i,
-                    page_number=1,
+                    page_number=page_number,
                     content=chunk_text,
                     embedding=emb,
-                    metadata=DocumentMetadata(
-                        pages=pages,
-                        author=author,
-                        word_count=word_count,
-                    ),
+                    metadata=chunk_metadata,
                     created_at=now,
                 )
                 self.chunk_repo.create(chunk_model)
@@ -382,6 +515,7 @@ class DocumentService:
 
         except Exception as e:
             raise Exception(f"Error storing in vector database: {str(e)}")
+
 
     async def search_documents(
         self, query: str, limit: int = 5, similarity_threshold: float = 0.7

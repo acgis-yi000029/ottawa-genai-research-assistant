@@ -7,13 +7,17 @@ from pydantic import BaseModel, Field
 
 class DocumentMetadata(BaseModel):
     """Document metadata model."""
-
+    # Document-level metadata
     pages: int | None = None
     author: str | None = None
     version: str | None = None
+    word_count: int | None = None
+
+    # RAG / indexing metadata
+    quarter: str | None = None
     section: str | None = None
     subsection: str | None = None
-    word_count: int | None = None
+    sentence_id: int | None = None
     start_char: int | None = None
     end_char: int | None = None
 

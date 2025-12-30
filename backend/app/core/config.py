@@ -26,8 +26,8 @@ class Settings(BaseSettings):
 
     # API Keys
     OPENAI_API_KEY: str = Field(default="")
-    GROQ_API_KEY: str = Field(default="")
-    GEMINI_API_KEY: str = Field(default="")
+    AZURE_OPENAI_EMBEDDING_DEPLOYMENT: str = Field(default="")
+    AZURE_OPENAI_CHAT_DEPLOYMENT: str = Field(default="")
     GOOGLE_CLIENT_ID: str = Field(default="")
 
     # Database

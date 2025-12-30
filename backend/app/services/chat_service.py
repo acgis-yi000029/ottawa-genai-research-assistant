@@ -1,24 +1,25 @@
 """
-Chat Service with Free AI Integration
+Chat Service using Azure OpenAI
 
-This service provides AI-powered chat functionality using completely free AI providers:
-- Groq AI (ultra-fast, free)
-- Google Gemini (high-quality, free)
-- Local fallback when no API keys are available
-
-All services are completely free and provide enterprise-grade AI responses.
+This service provides AI-powered chat functionality backed by Azure OpenAI GPT models.
+- Uses Azure OpenAI for answer generation
+- Uses Azure OpenAI embeddings plus local vector store for RAG over ED update PDFs
+- Provides a local fallback response when Azure OpenAI is unavailable
 """
 
 import logging
 import re
+import os
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
+from types import SimpleNamespace
+
+import openai
 
 from app.core.config import Settings
 from app.models.chat import Conversation, Message
 from app.repositories.chat_repository import (ConversationRepository,
                                               MessageRepository)
-from app.services.ai_providers import GeminiService, GroqService
 from app.services.document_service import DocumentService
 
 logger = logging.getLogger(__name__)
@@ -39,15 +40,27 @@ class ChatService:
         self.document_service = DocumentService(settings)
         
         # Initialize free AI services
-        self.groq_service = GroqService(settings)
-        self.gemini_service = GeminiService(settings)
+        self.azure_client = openai.AzureOpenAI()
         
-        # Service priority: Groq first (fastest), then Gemini (high quality)
+        self.azure_chat_deployment = os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT") or getattr(
+            settings, "AZURE_OPENAI_CHAT_DEPLOYMENT", ""
+        )
+
+        # Single Azure OpenAI chat service status used for logging
         self.ai_services = [
-            ("Groq", self.groq_service),
-            ("Gemini", self.gemini_service)
+            (
+                "azure_openai",
+                SimpleNamespace(is_available=bool(self.azure_chat_deployment)),
+            )
         ]
         
+        if self.azure_chat_deployment:
+            logger.info(f"Azure OpenAI chat deployment configured: {self.azure_chat_deployment}")
+        else:
+            logger.warning(
+                "AZURE_OPENAI_CHAT_DEPLOYMENT is not configured. "
+                "Chat requests will fall back to mock responses."
+            )
         # Check available services
         available_services = [name for name, service in self.ai_services if service.is_available]
         
@@ -229,60 +242,57 @@ class ChatService:
                 # No document hits
                 model_input = message
 
-            # call free AI providers with the prepared model_input
-            for service_name, service in self.ai_services:
-                if service.is_available:
-                    try:
-                        logger.info(f"Trying {service_name} AI service...")
-                        response = await service.generate_response(model_input, language)
-                        
-                        # Use the final answer to reselect the best-matching chunk for citation.
-                        if rag_results and isinstance(response.get("text"), str):
-                            aligned_sources, aligned_snippets = self._align_citations_with_answer(
-                                answer_text=response["text"],
-                                rag_results=rag_results,
-                            )
-                            # Only override the original top1 setting when a better alignment result is found.
-                            if aligned_sources:
-                                sources = aligned_sources
-                            if aligned_snippets:
-                                display_snippets = aligned_snippets
+            # Call Azure OpenAI with the prepared model_input
+            try:
+                logger.info("Calling Azure OpenAI chat service...")
+                response = await self._generate_azure_response(model_input, language)
 
-                        # If documentation was used, include the source in the response for API/frontend use.
-                        if sources:
-                            existing_sources = response.get("sources") or []
-                            # Remove duplicates and maintain order
-                            merged_sources = list(
-                                dict.fromkeys(existing_sources + sources)
-                            )
-                            response["sources"] = merged_sources
-                        
-                        # Attach original document excerpts for citations
-                        if display_snippets:
-                            existing_charts = response.get("charts") or {}
-                            if not isinstance(existing_charts, dict):
-                                existing_charts = {}
-                            existing_charts["citations"] = display_snippets
-                            response["charts"] = existing_charts
-                            citations_text = "\n\n---\nOriginal excerpts used:\n\n" + "\n\n".join(display_snippets)
-                            response["text"] = (response.get("text") or "").rstrip() + citations_text
+                # Use the final answer to reselect the best-matching chunk for citation.
+                if rag_results and isinstance(response.get("text"), str):
+                    aligned_sources, aligned_snippets = self._align_citations_with_answer(
+                        answer_text=response["text"],
+                        rag_results=rag_results,
+                    )
+                    # Only override the original top1 setting when a better alignment result is found.
+                    if aligned_sources:
+                        sources = aligned_sources
+                    if aligned_snippets:
+                        display_snippets = aligned_snippets
 
-                        # Attach confidence level if available
-                        if confidence_label is not None:
-                            response["confidence"] = confidence_label
+                if sources:
+                    existing_sources = response.get("sources") or []
+                    if not isinstance(existing_sources, list):
+                        existing_sources = []
+                    merged_sources = list(
+                        dict.fromkeys(existing_sources + sources)
+                    )
+                    response["sources"] = merged_sources
 
-                        # Save conversation if IDs provided
-                        if conversation_id and user_id:
-                            await self._save_conversation(
-                                conversation_id, user_id, message, response["text"], language
-                            )
-    
-                        logger.info(f"{service_name} response generated successfully")
-                        return response
-                        
-                    except Exception as e:
-                        logger.warning(f"{service_name} failed: {e}")
-                        continue
+                # Attach original document excerpts for citations
+                if display_snippets:
+                    existing_charts = response.get("charts") or {}
+                    if not isinstance(existing_charts, dict):
+                        existing_charts = {}
+                    existing_charts["citations"] = display_snippets
+                    response["charts"] = existing_charts
+                    citations_text = "\n\n---\nOriginal excerpts used:\n\n" + "\n\n".join(display_snippets)
+                    response["text"] = (response.get("text") or "").rstrip() + citations_text
+
+                # Attach confidence level if available
+                if confidence_label is not None:
+                    response["confidence"] = confidence_label
+
+                # Save conversation if IDs provided
+                if conversation_id and user_id:
+                    await self._save_conversation(
+                        conversation_id, user_id, message, response["text"], language
+                    )
+
+                logger.info("Azure OpenAI response generated successfully")
+                return response
+
+            except Exception as e:
+                logger.warning(f"Azure OpenAI chat failed: {e}")
             
             # If all AI services fail, use fallback
             logger.warning("All AI services failed, using mock response")
@@ -302,6 +312,53 @@ class ChatService:
             fallback = await self._get_fallback_response(message, language)
             return fallback
     
+    async def _generate_azure_response(self, message: str, language: str) -> Dict[str, Any]:
+        """
+        Call Azure OpenAI chat.completions to generate a response.
+        """
+        if not self.azure_chat_deployment:
+            raise Exception("AZURE_OPENAI_CHAT_DEPLOYMENT is not configured.")
+
+        language_prompts = {
+            "en": (
+                "You are an AI assistant for the City of Ottawa's Economic Development team. "
+                "Answer questions using the provided context when available. "
+                "If the question is not about Ottawa's economy, still answer helpfully, "
+                "but keep a professional tone."
+            ),
+            "fr": (
+                "Vous êtes un assistant IA pour l'équipe de développement économique de la Ville d'Ottawa. "
+                "Répondez aux questions en utilisant le contexte fourni lorsque possible, "
+                "avec un ton professionnel."
+            ),
+        }
+
+        system_prompt = language_prompts.get(language, language_prompts["en"])
+
+        completion = self.azure_client.chat.completions.create(
+            model=self.azure_chat_deployment,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": message},
+            ],
+            temperature=self.settings.TEMPERATURE,
+            max_tokens=self.settings.MAX_TOKENS,
+        )
+
+        choice = completion.choices[0]
+        response_text = choice.message.content or ""
+        usage = getattr(completion, "usage", None)
+        tokens_used = getattr(usage, "total_tokens", 0) if usage is not None else 0
+
+        return {
+            "text": response_text,
+            "provider": "Azure OpenAI",
+            "model": self.azure_chat_deployment,
+            "language": language,
+            "tokens_used": tokens_used,
+            "cost": 0.0,
+        }
+
     async def _get_fallback_response(self, message: str, language: str) -> Dict[str, Any]:
         """
         Generate fallback response when AI services are unavailable
@@ -318,7 +375,10 @@ class ChatService:
             "language": language,
             "tokens_used": 50,
             "cost": 0.0,
-            "note": "This is a fallback response. Please set up free API keys for Groq and Gemini for best experience."
+            "note": (
+                "This is a fallback response. Please configure Azure OpenAI endpoint, "
+                "API key, API version and chat deployment for full-quality answers."
+            )
         }
     
     def _align_citations_with_answer(
@@ -404,8 +464,21 @@ class ChatService:
                     or "Document"
                 )
                 chunk_text = (best_item.get("chunk_text") or "").strip()
+                page_number = best_item.get("page_number") or 1
+                metadata = best_item.get("metadata") or {}
+                quarter = metadata.get("quarter")
+
                 if chunk_text:
-                    label = f"{filename}"
+                    label_parts: list[str] = [str(filename)]
+                    if quarter:
+                        label_parts.append(str(quarter))
+                    if page_number:
+                        try:
+                            label_parts.append(f"p.{int(page_number)}")
+                        except Exception:
+                            label_parts.append(f"p.{page_number}")
+                    label = ", ".join(label_parts)
+
                     sources = [label]
                     display_snippets = [f"[{label}]\n{chunk_text}"]
                     return sources, display_snippets
@@ -506,16 +579,31 @@ class ChatService:
             raise Exception(f"Could not create conversation: {str(e)}")
     
     def get_ai_service_status(self) -> Dict[str, Any]:
-        """Get status of all AI services"""
-        services_status = []
-        
-        for service_name, service in self.ai_services:
-            services_status.append(service.get_status())
-        
+        """Get status of Azure OpenAI chat service"""
+        service_available = bool(self.azure_chat_deployment)
+
+        services_status = [
+            {
+                "name": "Azure OpenAI",
+                "model": self.azure_chat_deployment or self.settings.DEFAULT_AI_MODEL,
+                "available": service_available,
+                "cost": "Metered (Azure OpenAI)",
+                "rate_limit": "See Azure OpenAI resource limits",
+                "features": [
+                    "Hosted in Azure",
+                    "Aligned with City of Ottawa architecture",
+                    "Supports RAG over ED update PDFs",
+                ],
+            }
+        ]
+
         return {
-            "total_services": len(self.ai_services),
-            "available_services": len([s for s in services_status if s["available"]]),
+            "total_services": 1,
+            "available_services": 1 if service_available else 0,
             "services": services_status,
             "fallback_available": True,
-            "recommendation": "Set up free API keys for Groq and Gemini for best experience"
+            "recommendation": (
+                "Configure Azure OpenAI endpoint, API key, API version and deployment "
+                "names for production use."
+            ),
         }
