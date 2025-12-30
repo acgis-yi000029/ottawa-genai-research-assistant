@@ -4,6 +4,14 @@
 This is the main entry point for running the FastAPI application with uvicorn.
 The actual FastAPI app is defined in app/main.py
 """
+# --- SQLite override for Azure Linux + Chroma ---
+try:
+    import pysqlite3  # type: ignore
+    import sys
+    sys.modules["sqlite3"] = pysqlite3  # let "import sqlite3" use pysqlite3
+except ModuleNotFoundError:
+    pass
+# --- end override ---
 
 import os
 import sys
